@@ -1,4 +1,4 @@
-package com.example.playaround;
+package com.example.service;
 
 import org.springframework.stereotype.Controller;
 
