@@ -11,13 +11,21 @@ import java.util.List;
 @Getter@Setter
 public class User {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="user_id")
     private String userId;
     private String userPw;
-    private String userName;
-    private int localAgree;
+//    private String userName;
+//    private int localAgree;
+
+    public User(){}
+
+    public User(String userId, String userPassword){
+        this.userId = userId;
+        this.userPw = userPw;
+    }
 
 
     @OneToMany(mappedBy = "user")
