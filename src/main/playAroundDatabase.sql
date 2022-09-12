@@ -12,8 +12,8 @@ musicId bigint(11) PRIMARY KEY,
 musicName varchar(50) NOT NULL,
 genre varchar(45) NOT NULL,
 singerName VARCHAR(45) NOT NULL,
-countUp VARCHAR(45) NULL DEFAULT NULL,
-countDown VARCHAR(45) NULL DEFAULT NULL
+countUp bigint(100),
+countDown bigint(100)
 );
 CREATE TABLE playlist (
  playlistId bigint(11) PRIMARY KEY,
