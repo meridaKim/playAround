@@ -9,6 +9,7 @@
 --
 CREATE TABLE music (
 musicId bigint(11) PRIMARY KEY,
+musicName varchar(50) NOT NULL,
 genre varchar(45) NOT NULL,
 singerName VARCHAR(45) NOT NULL,
 countUp VARCHAR(45) NULL DEFAULT NULL,
