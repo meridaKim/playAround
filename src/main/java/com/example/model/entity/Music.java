@@ -14,11 +14,12 @@ public class Music {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="music_id")
     private int musicId;
+    private String musicName;
     private String genre;
     private String singerName;
     private String distributor;
-    private String countUp;
-    private String countDown;
+    private int countUp;
+    private int countDown;
 
 
    @OneToMany(mappedBy = "music")
