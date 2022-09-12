@@ -1,9 +1,30 @@
 package com.example.repository;
 
 import com.example.model.entity.Music;
-import org.springframework.data.jpa.repository.JpaRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.EntityManager;
+
 @Repository
-public interface MusicRepository extends JpaRepository<Music, Integer> {
+@RequiredArgsConstructor
+public class MusicRepository{
+
+    private final EntityManager em;
+
+    public void save(Music music){
+        em.persist(music);
+    }
+
+    public void remove(Music music){
+        em.remove(music);
+    }
+
+    public Music findOne(int musicId){
+        return em.find(Music.class,musicId);
+    }
+
+
+
+
 }
