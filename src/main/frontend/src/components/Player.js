@@ -44,7 +44,7 @@ function Player(props) {
         <>
             <p>
                 <div className="text-anim">
-                    <strong>Upcoming Song:</strong>
+                    <strong>SongPlace</strong>
                 </div>
 
                 <div className="nextsong-details">
