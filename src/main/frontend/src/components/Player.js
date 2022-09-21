@@ -100,6 +100,7 @@ function Player(props) {
                                 <i class="fa fa-ellipsis-h"></i>
                             </a>
                         </li>
+
                     </ul>
                 </div>
 
