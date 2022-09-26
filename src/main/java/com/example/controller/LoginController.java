@@ -1,6 +1,6 @@
 package com.example.controller;
 
-import com.example.model.entity.User;
+import com.example.model.entity.Users;
 import com.example.repository.UserRepository;
 import com.example.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class LoginController {
-
+public class    LoginController {
     @Autowired
     private LoginService loginService;
 
@@ -21,10 +20,10 @@ public class LoginController {
     }
 
     @PostMapping("/login/test")
-    public String loginAction(User user) {
+    public String loginAction(Users users) {
 //        System.out.println("id:" + user.getUserId());
-//        System.out.println("pw:" + user.getUserPw());
-        loginService.login(user);
+        System.out.println("All:" + users);
+        loginService.login(users);
         return "";
     }
 }
