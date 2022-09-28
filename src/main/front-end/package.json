@@ -87,8 +87,8 @@
   },
   "devDependencies": {
     "@fortawesome/fontawesome-svg-core": "1.2.35",
-    "@fortawesome/free-solid-svg-icons": "5.15.3",
-    "@fortawesome/react-fontawesome": "0.1.14",
+    "@fortawesome/free-solid-svg-icons": "5.15.1",
+    "@fortawesome/react-fontawesome": "0.1.12",
     "react-dev-utils": "^12.0.1"
   },
   "jest": {

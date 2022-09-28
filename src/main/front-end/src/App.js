@@ -14,7 +14,7 @@ function App() {
             "countUp": 0,
             "countDown": 0,
             "img_src": "./musics_images/별의 언어_cover.jpg",
-            "src": "./musics/별의 언어.mp3"
+            "src": "./musics/별의 언어.mp3",
         },
         {
             "musicId": 11,
@@ -24,7 +24,7 @@ function App() {
             "countUp": 0,
             "countDown": 0,
             "img_src": "./musics_images/황혼의 새_cover.jpg",
-            "src": "./musics/황혼의 새.mp3"
+            "src": "./musics/황혼의 새.mp3",
         },
         {
             "musicId": 12,
@@ -34,7 +34,7 @@ function App() {
             "countUp": 0,
             "countDown": 0,
             "img_src": "./musics_images/후유증_cover.jpg",
-            "src": "./musics/후유증.mp3"
+            "src": "./musics/후유증.mp3",
         },
     ]);
 
@@ -42,36 +42,35 @@ function App() {
     const [nextSongIndex, setNextSongIndex] = useState(currentSongIndex + 1);
     const [message, setMessage]=useState([]);
 
-  useEffect(()=>{
-      setNextSongIndex(()=>{
-          if (currentSongIndex + 1 > songs.length - 1) {
-              return 0;
-          } else {
-              return currentSongIndex + 1;
-          }
-      });
-    fetch("/hello")
-        .then((res)=>{
-          return res.json();
-        })
-        .then((data)=>{
-          setMessage(data);
+    useEffect(()=>{
+        fetch("/hello")
+            .then((res)=>{
+                return res.json();
+            })
+            .then((data)=>{
+                setMessage(data);
+            })
+        setNextSongIndex(()=>{
+            if (currentSongIndex + 1 > songs.length - 1) {
+                return 0;
+            } else {
+                return currentSongIndex + 1;
+            }
         });
-  },[currentSongIndex]);
-  return (
-    <div className="App">
+        // eslint-disable-next-line
+    },[currentSongIndex]);
 
-        <Player currentSongIndex={currentSongIndex}
-                setCurrentSongIndex={setCurrentSongIndex}
-                nextSongIndex={nextSongIndex}
-                songs={songs} />
-          <ul>
-              {message.map((v,idx)=><li key={`${idx}-${v}`}>{v}</li>)}
-          </ul>
-
-    </div>
-
-  );
+    return (
+        <div className="App">
+            <Player currentSongIndex={currentSongIndex}
+                    setCurrentSongIndex={setCurrentSongIndex}
+                    nextSongIndex={nextSongIndex}
+                    songs={songs} />
+            <ul>
+                {message.map((v,idx)=><li key={`${idx}-${v}`}>{v}</li>)}
+            </ul>
+        </div>
+    );
 }
 
 export default App;

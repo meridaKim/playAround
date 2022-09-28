@@ -1,13 +1,13 @@
 import React from "react";
 
-function PlayerDetails(props) {
+function PlayerDetail(props) {
     return (
         <div className="music-player--details">
             <div className="details-img">
                 <img
                     className="details-img--image"
                     src={props.song.img_src}
-                    alt={props.song.title}
+                    alt={props.song.musicName}
                 />
             </div>
             <div class="range"></div>
@@ -20,4 +20,4 @@ function PlayerDetails(props) {
     );
 }
 
-export default PlayerDetails;
+export default PlayerDetail;

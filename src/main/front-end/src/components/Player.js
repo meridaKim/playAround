@@ -44,17 +44,17 @@ function Player(props) {
         <>
             <p>
                 <div className="text-anim">
-                    <strong>Upcoming Song:</strong>
+                    <strong>SongPlace</strong>
                 </div>
 
                 <div className="nextsong-details">
                     <img
                         src={props.songs[props.nextSongIndex].img_src}
-                        alt={props.songs[props.nextSongIndex].title}
+                        alt={props.songs[props.nextSongIndex].musicName}
                         style={{ width: "4em", height: "auto" }}
                     />
                     <p>
-                        <b>{props.songs[props.nextSongIndex].title} </b>&nbsp; by &nbsp;
+                        <b>{props.songs[props.nextSongIndex].musicName} </b>&nbsp; by &nbsp;
                         <b>{props.songs[props.nextSongIndex].singerName}</b>
                         {/* &nbsp; from album
             &nbsp; */}
