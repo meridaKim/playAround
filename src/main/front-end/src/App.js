@@ -13,8 +13,8 @@ function App() {
             "singerName": "뉴이스트",
             "countUp": 0,
             "countDown": 0,
-            "img_src": "./musics_images/별의 언어_cover.jpg",
-            "src": "./musics/별의 언어.mp3",
+            "img_src": "./musics_images/stellar_language_cover.jpg",
+            "src": "./musics/stellar_language.mp3",
         },
         {
             "musicId": 11,
@@ -23,8 +23,8 @@ function App() {
             "singerName": "AOT",
             "countUp": 0,
             "countDown": 0,
-            "img_src": "./musics_images/황혼의 새_cover.jpg",
-            "src": "./musics/황혼의 새.mp3",
+            "img_src": "./musics_images/twilight_bird_cover.jpg",
+            "src": "./musics/twilight_bird.mp3",
         },
         {
             "musicId": 12,
@@ -33,8 +33,8 @@ function App() {
             "singerName": "뉴이스트",
             "countUp": 0,
             "countDown": 0,
-            "img_src": "./musics_images/후유증_cover.jpg",
-            "src": "./musics/후유증.mp3",
+            "img_src": "./musics_images/aftereffect_cover.jpg",
+            "src": "./musics/aftereffect.mp3",
         },
     ]);
 
@@ -57,7 +57,7 @@ function App() {
                 return currentSongIndex + 1;
             }
         });
-        // eslint-disable-next-line
+
     },[currentSongIndex]);
 
     return (
