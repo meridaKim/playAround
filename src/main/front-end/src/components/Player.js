@@ -42,6 +42,14 @@ function Player(props) {
 
     return (
         <>
+            <div className="container">
+            <div className="song-place-container">
+                <div className="header">헤더</div>
+                <div className="location">위치찾기</div>
+                <div className="playlist">플레이리스트</div>
+
+            </div>
+            <div className="song-player-container">
             <p>
                 <div className="text-anim">
                     <strong>SongPlace</strong>
@@ -102,8 +110,11 @@ function Player(props) {
                         </li>
                     </ul>
                 </div>
-
+                <div className="song-playlist">
+                </div>
                 {/* <h4>Lofi Music Player React </h4> */}
+            </div>
+            </div>
             </div>
         </>
     );

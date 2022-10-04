@@ -26,7 +26,21 @@ body {
     animation: background-scroll 6s infinite;
     animation-timing-function: linear;
 }
-
+/*grid*/
+.container {
+    display:grid;
+    grid-template-columns: 3fr 1fr;
+}
+.song-place-container{
+    display: grid;
+    grid-template-areas:
+    "header"
+    "location"
+    "playlist"
+}
+.song-player-container{
+    display: grid;
+}
 /* Player body */
 
 .music-player {
