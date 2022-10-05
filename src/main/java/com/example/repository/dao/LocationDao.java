@@ -1,6 +1,7 @@
 package com.example.repository.dao;
 
 import com.example.model.entity.Location;
+import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

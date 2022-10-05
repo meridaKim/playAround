@@ -2,6 +2,7 @@ package com.example.service;
 
 import com.example.model.entity.Location;
 import com.example.repository.dao.LocationDao;
+import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -11,7 +11,7 @@
 <div id="map" style="width:100%;height:350px;"></div>
 
 <!-- API Key 입력 필요 -->
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=[발급받은 APIKEY 입력]&libraries=clusterer"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9e851462960aebb3a3c72b682b9b4e48&libraries=clusterer"></script>
 <script>
     $.ajax({
         // url은 본인의 환경에 따라 작성 합니다.
