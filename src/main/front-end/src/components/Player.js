@@ -44,31 +44,35 @@ function Player(props) {
         <>
             <div className="container">
             <div className="song-place-container">
-                <div className="header">헤더</div>
-                <div className="location">위치찾기</div>
-                <div className="playlist">플레이리스트</div>
+                <div className="header">
+                    <div className="song-place">
+                        <img
+                            src="./logos/songplace.png"
+                        />
+                    </div>
+                    <div className="space">space</div>
+                    <div className="user">로그인</div>
+                </div>
+                <div className="location">
+                    <div className="item">지금나는?</div>
+                    <div className="item">우주를 헤매는 중</div>
+                    <div className="item">현재 위치를 설정해보세요</div>
+                    <div className="item">내 위치 탐색하기</div>
+
+                </div>
+                <div className="playlist">플레이리스트리스트 추천을 받으시려면 위치설정을 완료해주세요</div>
 
             </div>
+
             <div className="song-player-container">
             <p>
                 <div className="text-anim">
-                    <strong>SongPlace</strong>
+                   <img
+                       src="./logos/nowplaying.png"
+                   />
                 </div>
 
-                <div className="nextsong-details">
-                    <img
-                        src={props.songs[props.nextSongIndex].img_src}
-                        alt={props.songs[props.nextSongIndex].musicName}
-                        style={{ width: "4em", height: "auto" }}
-                    />
-                    <p>
-                        <b>{props.songs[props.nextSongIndex].musicName} </b>&nbsp; by &nbsp;
-                        <b>{props.songs[props.nextSongIndex].singerName}</b>
-                        {/* &nbsp; from album
-            &nbsp; */}
-                        {/* <b>{props.songs[props.nextSongIndex].album}</b> */}
-                    </p>
-                </div>
+
             </p>
             <div className="music-player">
                 <audio
