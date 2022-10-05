@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,100;1,400&display=swap");
-
+:root { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+    :root { font-family: 'Inter var', sans-serif; }
+}
 * {
     margin: 0;
     padding: 0;
@@ -40,26 +43,36 @@ body {
 
 }
 .header{
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-auto-flow: column;
     align-items: center;
     /*grid-template-columns: 3fr 1fr 7fr;*/
 }
 .song-place{
+    display: grid;
+    grid-auto-flow: column;
     width: 197px;
     height: 31.8px;
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0.5rem;
+    margin: 43px;
+}
+.songplace-logo{
+    display: grid;
+    grid-auto-flow: column;
+
 }
 .space{
+    display: grid;
+    grid-auto-flow: column;
     font-family: 'Ginora Sans';
     font-style: normal;
     font-weight: 700;
     font-size: 100%;
     line-height: 35px;
     text-align: center;
-    margin-left: auto; margin-right: auto;
+    margin-left: 13px;
+    width: 95px;
+    height: 35px;
+    /*margin-left: auto; margin-right: auto;*/
     margin-top: auto; margin-bottom: auto;
     color: #C6C6C6;
 }
@@ -76,48 +89,70 @@ body {
 }
 
 .location{
+    display:flex;
+    flex-direction: column;
     border-bottom: 1.30114px solid #474747;
+    padding: 43px;
 }
 
-
 .item:nth-child(1){
+    flex-direction: row;
+
+    width: 135px;
+    height: 36px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 150%;
     line-height: 36px;
+    text-align: left;
 
     color: #474747;
 }
 .item:nth-child(2){
+
+    width: 553px;
+    height: 97px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
-    font-size: 80px;
+    font-size: 400%;
     line-height: 97px;
+    text-align: left;
+    margin-bottom: 17px;
     color: #02457A;
 
 }
 .item:nth-child(3){
+
+
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
     line-height: 29px;
+    text-align: left;
+    margin-bottom: 20px;
     color: #474747;
 
 }
 .item:nth-child(4){
+
+    width: 160px;
+    height: 47px;
+
+
+    background: #02457A;
+    border-radius: 100px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
     font-size: 15px;
     line-height: 18px;
     text-align: center;
+    padding:15px;
 
     color: #EFEFEF;
-    background: #02457A;
-    border-radius: 100px;
 }
 .song-player-container{
     display: grid;

@@ -46,11 +46,14 @@ function Player(props) {
             <div className="song-place-container">
                 <div className="header">
                     <div className="song-place">
-                        <img
-                            src="./logos/songplace.png"
-                        />
+                        <div className="song-place-logo">
+                            <img
+                                src="./logos/songplace.png"
+                            />
+                        </div>
+                        <div className="space">space</div>
                     </div>
-                    <div className="space">space</div>
+
                     <div className="user">로그인</div>
                 </div>
                 <div className="location">
@@ -58,7 +61,6 @@ function Player(props) {
                     <div className="item">우주를 헤매는 중</div>
                     <div className="item">현재 위치를 설정해보세요</div>
                     <div className="item">내 위치 탐색하기</div>
-
                 </div>
                 <div className="playlist">플레이리스트리스트 추천을 받으시려면 위치설정을 완료해주세요</div>
 
