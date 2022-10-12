@@ -2,7 +2,6 @@ package com.example.model;
 
 import com.example.model.dto.SearchLocalReq;
 import com.example.model.dto.SearchLocalRes;
-import lombok.var;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
