@@ -3,6 +3,7 @@ package com.example.model.dto;
 import lombok.Data;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
+import org.springframework.util.MultiValueMapAdapter;
 
 @Data
 public class SearchLocalReq {

@@ -17,6 +17,9 @@ public class SearchLocalRes {
 
     private List<SearchLocalItem> items;
 
+    @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
     public static class SearchLocalItem{
         private String title;
         private String link;

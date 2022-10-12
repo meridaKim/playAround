@@ -22,7 +22,7 @@ public class KakaoClient {
 
     public SearchLocalRes searchLocal(SearchLocalReq searchLocalReq){
        var uri= UriComponentsBuilder.fromUriString(kakaoLocalSearchUrl)
-               .queryParam(searchLocalReq.toMultiValueMap())
+               .queryParams(searchLocalReq.toMultiValueMap())
                .build()
                .encode()
                .toUri();
