@@ -7,6 +7,16 @@ function App() {
 
     const [songs] = useState([
         {
+            "musicId": 9,
+            "musicName": "-",
+            "genre": "발라드",
+            "singerName": "-",
+            "countUp": 0,
+            "countDown": 0,
+            "img_src": "./logos/player_image.png",
+            "src": "./musics/stellar_language.mp3",
+        },
+        {
             "musicId": 10,
             "musicName": "별의 언어",
             "genre": "발라드",

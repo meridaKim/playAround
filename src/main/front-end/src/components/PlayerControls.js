@@ -10,18 +10,38 @@ import {
 function PlayerControls(props) {
     return (
         <div className="music-player--controls">
+            <div className="random-play">
+            <a href="#" class="list__link">
+                <img
+                    src="./logos/random_play.png"
+                />
+            </a>
+            </div>
             <button className="skip-btn" onClick={() => props.SkipSong(false)}>
-                <FontAwesomeIcon icon={faBackward} />
+                <img
+                    src="./logos/left_skip_button.png"
+                />
             </button>
             <button
                 className="play-btn"
                 onClick={() => props.setIsPlaying(!props.isPlaying)}
             >
-                <FontAwesomeIcon icon={props.isPlaying ? faPause : faPlay} />
+                <img
+                    src="./logos/play_button.png"
+                />
             </button>
             <button className="skip-btn" onClick={() => props.SkipSong()}>
-                <FontAwesomeIcon icon={faForward} />
+                <img
+                    src="./logos/right_skip_button.png"
+                />
             </button>
+            <div className="infinite-play">
+                <a href="#" className="list__link">
+                    <img
+                        src="./logos/infinite_play.png"
+                    />
+                </a>
+            </div>
         </div>
     );
 }

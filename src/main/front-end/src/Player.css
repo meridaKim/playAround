@@ -37,7 +37,7 @@ body {
 .song-place-container{
     display: grid;
     grid-template-rows: 122px 395px 516px;
-    margin-left:200px;
+    /*margin-left:200px;*/
     border-right: 1.30114px solid #474747;
     border-left: 1.30114px solid #474747;
 
@@ -154,22 +154,49 @@ body {
 
     color: #EFEFEF;
 }
-.song-player-container{
-    display: grid;
-    margin-right:200px;
-    border-right: 1.30114px solid #474747;
+
+.playlist{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+
+    color: #474747;
+
+    margin: auto;
 }
+
 /* Player body */
 
+.song-player-container{
+    display: grid;
+    /*margin-right:200px;*/
+    border-right: 1.30114px solid #474747;
+    grid-template-rows: 746px 7fr;
+
+
+}
+.song-player {
+    border-bottom: 1.30114px solid #474747;
+}
+
+.text-anim {
+
+    display: grid;
+    grid-auto-flow: column;
+    /*align-items: center;*/
+    /*width: 197px;*/
+    /*height: 31.8px;*/
+    margin-top: 43px;
+    margin-bottom: 43px;
+    margin-left: 20px;
+}
+
 .music-player {
-    margin-top: 7rem;
-    margin-right: auto;
-    margin-left: auto;
+    margin-top: 34px;
     max-width: 30rem;
-    background: #fff;
-    border-radius: 1.25rem;
-    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.19),
-    0 6px 6px -10px rgba(0, 0, 0, 0.23);
 }
 
 /* body cover */
@@ -238,53 +265,59 @@ body {
     margin-bottom: 35px;
 }
 
+.random-play {
+    margin-right:32.34px;
+}
+.infinite-play{
+    margin-left:32.34px;
+}
 .music-player--controls .play-btn {
-    padding: 2rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
+    /*padding: 2rem;*/
+    margin-left: 16.84px;
+    margin-right: 16.84px;
     font-size: 1rem;
     border: none;
     outline: none;
     background: none;
     border-radius: 50%;
-    box-shadow: 0 3px 6px rgba(33, 33, 33, 0.1), 0 3px 12px rgba(33, 33, 33, 0.15);
+    /*box-shadow: 0 3px 6px rgba(33, 33, 33, 0.1), 0 3px 12px rgba(33, 33, 33, 0.15);*/
     transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
 }
 
 .play-btn:focus {
     color: rgba(171, 2, 26, 0.95);
     opacity: 1;
-    box-shadow: 0 6px 9px rgba(33, 33, 33, 0.1), 0 6px 16px rgba(33, 33, 33, 0.15);
+    /*box-shadow: 0 6px 9px rgba(33, 33, 33, 0.1), 0 6px 16px rgba(33, 33, 33, 0.15);*/
 }
 
 .play-btn:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
     color: rgba(171, 2, 26, 0.95);
     opacity: 1;
-    box-shadow: 0 6px 9px rgba(33, 33, 33, 0.1), 0 6px 16px rgba(33, 33, 33, 0.15);
+    /*box-shadow: 0 6px 9px rgba(33, 33, 33, 0.1), 0 6px 16px rgba(33, 33, 33, 0.15);*/
 }
 
 .music-player--controls .skip-btn {
-    padding: 0.7rem;
+    /*padding: 0.7rem;*/
     font-size: 1rem;
     border: none;
     outline: none;
     background: none;
     border-radius: 50%;
-    box-shadow: 0 3px 6px rgba(33, 33, 33, 0.1), 0 3px 12px rgba(33, 33, 33, 0.15);
+    /*box-shadow: 0 3px 6px rgba(33, 33, 33, 0.1), 0 3px 12px rgba(33, 33, 33, 0.15);*/
     transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
 }
 .skip-btn:focus {
     color: rgba(171, 2, 26, 0.95);
     opacity: 1;
-    box-shadow: 0 6px 9px rgba(33, 33, 33, 0.1), 0 6px 16px rgba(33, 33, 33, 0.15);
+    /*box-shadow: 0 6px 9px rgba(33, 33, 33, 0.1), 0 6px 16px rgba(33, 33, 33, 0.15);*/
 }
 
 .skip-btn:hover {
-    /* transform: scale(1.5); */
+    transform: scale(1.1);
     color: rgba(171, 2, 26, 0.95);
     opacity: 1;
-    box-shadow: 0 6px 9px rgba(33, 33, 33, 0.1), 0 6px 16px rgba(33, 33, 33, 0.15);
+    /*box-shadow: 0 6px 9px rgba(33, 33, 33, 0.1), 0 6px 16px rgba(33, 33, 33, 0.15);*/
 }
 
 /* Image */
@@ -296,6 +329,7 @@ body {
 /* Artist Info */
 
 .artist-info {
+    margin-top:68.36px;
     padding-top: 1.5rem;
     padding-bottom: 1.25rem;
     text-align: center;
@@ -316,6 +350,41 @@ body {
     font-weight: 400;
     color: #d30320;
 }
+/* Playlist */
+
+.song-playlist{
+    display: grid;
+
+}
+
+.song-playlist-text{
+    margin-top:34px;
+    margin-left:23px;
+    display: flex;
+    flex-direction: row;
+}
+
+.play-song{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23.2732px;
+    line-height: 28px;
+
+    color: #474747;
+}
+
+.save-song{
+    margin-left:21px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23.2732px;
+    line-height: 28px;
+
+    color: #9B9B9B;
+}
+
 
 /* Footer */
 
