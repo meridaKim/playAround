@@ -3,23 +3,23 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-ReactDOM.render(
-    <React.StrictMode>
-        <BrowserRouter>
-            <App />
-        </BrowserRouter>
-    </React.StrictMode>,
-document.getElementById('root')
-);
-import reportWebVitals from './reportWebVitals';
-
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-//    document.getElementById('root')
+// ReactDOM.render(
+//     <React.StrictMode>
+//
+//     </React.StrictMode>,
+// document.getElementById('root')
 // );
+// import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+      <BrowserRouter>
+          <App />
+      </BrowserRouter>
+  </React.StrictMode>,
+   document.getElementById('root')
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

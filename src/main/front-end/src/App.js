@@ -1,4 +1,5 @@
 import React from "react";
+import {Link, Route, Switch} from 'react-router-dom';
 import {useState, useEffect} from 'react';
 import './Player.css';
 import Player from "./components/Player";
@@ -71,14 +72,24 @@ function App() {
     },[currentSongIndex]);
 
     return (
-        <div className="App">
-            <Player currentSongIndex={currentSongIndex}
-                    setCurrentSongIndex={setCurrentSongIndex}
-                    nextSongIndex={nextSongIndex}
-                    songs={songs} />
-            <ul>
-                {message.map((v,idx)=><li key={`${idx}-${v}`}>{v}</li>)}
-            </ul>
+        <div>
+            <Route exact path="/">
+                <div className="App">
+                    <Player currentSongIndex={currentSongIndex}
+                            setCurrentSongIndex={setCurrentSongIndex}
+                            nextSongIndex={nextSongIndex}
+                            songs={songs} />
+                    <ul>
+                        {message.map((v,idx)=><li key={`${idx}-${v}`}>{v}</li>)}
+                    </ul>
+                </div>
+            </Route>
+            <Route path="/signup">
+                <div>회원가입페이지</div>
+            </Route>
+            <Route path="/signin">
+                <div>로그인페이지</div>
+            </Route>
         </div>
     );
 }
