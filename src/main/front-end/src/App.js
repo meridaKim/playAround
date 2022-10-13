@@ -86,6 +86,7 @@ function App() {
             </Route>
             <Route path="/signup">
                 <div>회원가입페이지</div>
+
             </Route>
             <Route path="/signin">
                 <div>로그인페이지</div>

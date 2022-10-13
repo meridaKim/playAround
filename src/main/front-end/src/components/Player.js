@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import {Link, Route, Switch} from 'react-router-dom';
 import PlayerDetail from "./PlayerDetail";
 import PlayerControls from "./PlayerControls";
 
@@ -54,7 +55,7 @@ function Player(props) {
                         <div className="space">space</div>
                     </div>
 
-                    <div className="user">로그인</div>
+                    <Link to="/signin"><div className="user">로그인</div></Link>
                 </div>
                 <div className="location">
                     <div className="item">지금나는?</div>
