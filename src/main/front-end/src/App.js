@@ -3,6 +3,7 @@ import {Link, Route, Switch} from 'react-router-dom';
 import {useState, useEffect} from 'react';
 import './Player.css';
 import Player from "./components/Player";
+import Login from "./components/Login";
 
 function App() {
 
@@ -90,6 +91,7 @@ function App() {
             </Route>
             <Route path="/signin">
                 <div>로그인페이지</div>
+                <Login />
             </Route>
         </div>
     );
