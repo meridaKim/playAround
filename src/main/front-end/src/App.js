@@ -73,7 +73,7 @@ function App() {
     },[currentSongIndex]);
 
     return (
-        <div>
+        <>
             <Route exact path="/">
                 <div className="App">
                     <Player currentSongIndex={currentSongIndex}
@@ -87,13 +87,11 @@ function App() {
             </Route>
             <Route path="/signup">
                 <div>회원가입페이지</div>
-
             </Route>
             <Route path="/signin">
-                <div>로그인페이지</div>
                 <Login />
             </Route>
-        </div>
+        </>
     );
 }
 
