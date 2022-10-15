@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import {Link, Route, Switch} from 'react-router-dom';
 import {useState, useEffect} from 'react';
@@ -25,7 +26,7 @@ function App() {
             "singerName": "뉴이스트",
             "countUp": 0,
             "countDown": 0,
-            "img_src": "./musics_images/stellar_language_cover.jpg",
+            "img_src": "./logos/player_image.png",
             "src": "./musics/stellar_language.mp3",
         },
         {
@@ -35,7 +36,7 @@ function App() {
             "singerName": "AOT",
             "countUp": 0,
             "countDown": 0,
-            "img_src": "./musics_images/twilight_bird_cover.jpg",
+            "img_src": "./logos/player_image.png",
             "src": "./musics/twilight_bird.mp3",
         },
         {
@@ -45,8 +46,18 @@ function App() {
             "singerName": "뉴이스트",
             "countUp": 0,
             "countDown": 0,
-            "img_src": "./musics_images/aftereffect_cover.jpg",
+            "img_src": "./logos/player_image.png",
             "src": "./musics/aftereffect.mp3",
+        },
+        {
+            "musicId": 13,
+            "musicName": "VOYAGER",
+            "genre": "시티팝",
+            "singerName": "SHIN EVA",
+            "countUp": 0,
+            "countDown": 0,
+            "img_src": "./logos/player_image.png",
+            "src": "./musics/VOYAGER.mp3",
         },
     ]);
 
