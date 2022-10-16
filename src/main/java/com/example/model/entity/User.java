@@ -30,4 +30,6 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     private List<Playlist> playlists = new ArrayList<>();
+
+
 }

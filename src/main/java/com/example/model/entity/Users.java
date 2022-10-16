@@ -1,14 +1,16 @@
 package com.example.model.entity;
 
-import lombok.*;
-import org.hibernate.annotations.GenericGenerator;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 @Data
+@Getter
+@Setter
 public class Users {
     @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,6 +21,12 @@ public class Users {
     private String userName;
     private boolean localAgree;
     private String userEmail;
+
+    public Users(String userId,String password){
+        super();
+        this.userId = userId;
+        this.userPw = password;
+    }
     /*kakao,naver,google*/
 //    private String provider;
 //    @Builder

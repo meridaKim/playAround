@@ -1,10 +1,11 @@
-import axios from "axios";
+import axios from 'axios';
 import React from "react";
 import {Link, Route, Switch} from 'react-router-dom';
 import {useState, useEffect} from 'react';
 import './Player.css';
 import Player from "./components/Player";
 import Login from "./components/Login";
+import InstructorApp from "./components/InstructorApp";
 
 function App() {
 
@@ -63,16 +64,24 @@ function App() {
 
     const [currentSongIndex, setCurrentSongIndex] = useState(0);
     const [nextSongIndex, setNextSongIndex] = useState(currentSongIndex + 1);
-    const [message, setMessage]=useState([]);
+    const [user,setUser]=useState([]);
 
     useEffect(()=>{
-        fetch("/hello")
-            .then((res)=>{
-                return res.json();
-            })
-            .then((data)=>{
-                setMessage(data);
-            })
+        // fetch("/hello")
+        //     .then((res)=>{
+        //         return res.json();
+        //     })
+        //     .then((data)=>{
+        //         setMessage(data);
+        //     })
+        axios.post("/api/users").then((response)=>{
+            if(response.data){
+                console.log(response.data);
+                setUser(response.data);
+            }else{
+                alert("failed to");
+            }
+        })
         setNextSongIndex(()=>{
             if (currentSongIndex + 1 > songs.length - 1) {
                 return 0;
@@ -84,25 +93,23 @@ function App() {
     },[currentSongIndex]);
 
     return (
-        <>
-            <Route exact path="/">
+        // <>
+
                 <div className="App">
                     <Player currentSongIndex={currentSongIndex}
                             setCurrentSongIndex={setCurrentSongIndex}
                             nextSongIndex={nextSongIndex}
                             songs={songs} />
-                    <ul>
-                        {message.map((v,idx)=><li key={`${idx}-${v}`}>{v}</li>)}
-                    </ul>
+                    <InstructorApp />
                 </div>
-            </Route>
-            <Route path="/signup">
-                <div>회원가입페이지</div>
-            </Route>
-            <Route path="/signin">
-                <Login />
-            </Route>
-        </>
+        /*    </Route>*/
+        /*    <Route path="/signup">*/
+        /*        <div>회원가입페이지</div>*/
+        /*    </Route>*/
+        /*    <Route path="/signin">*/
+        /*        <Login />*/
+        /*    </Route>*/
+        /*</>*/
     );
 }
 
