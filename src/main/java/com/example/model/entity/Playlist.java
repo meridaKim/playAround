@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class    Playlist {
     @javax.persistence.Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "playlistId", length = 100)
+    @Column(name = "playlist_id", length = 100)
     private int playlistId;
     private String countPlaylist;
 
