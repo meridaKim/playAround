@@ -14,7 +14,7 @@ function PlayerDetail(props) {
             <div className="artist-info">
                 <div className="details-title">{props.song.musicName}</div>
                 <div className="details-artist">{props.song.singerName}</div>
-                <div class="line"></div>
+                <div className="line"></div>
             </div>
         </div>
     );

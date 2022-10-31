@@ -11,7 +11,7 @@ function PlayerControls(props) {
     return (
         <div className="music-player--controls">
             <div className="random-play">
-            <a href="#" class="list__link">
+            <a href="#" className="list__link">
                 <img
                     src="./logos/random_play.png"
                 />

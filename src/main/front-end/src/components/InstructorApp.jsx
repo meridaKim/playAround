@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ListCoursesComponent from './ListCoursesComponent';
+import ListPlaylistComponent from './ListPlaylistComponent';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 
@@ -8,12 +8,13 @@ class InstructorApp extends Component {
         return (
             <Router>
                 <>
-                    <h1>Instructor Application</h1>
-                    <Switch>
-                        <Route path="/" exact component={ListCoursesComponent} />
-                        <Route path="/courses" exact component={ListCoursesComponent} />
+                    <h1>플레이리스트를 가져오자</h1>
+                    <ListPlaylistComponent/>
+                    {/*<Switch>*/}
+                    {/*    <Route path="/" exact component={ListPlaylistComponent} />*/}
+                    {/*    <Route path="/courses" exact component={ListPlaylistComponent} />*/}
 
-                    </Switch>
+                    {/*</Switch>*/}
                 </>
             </Router>
         )

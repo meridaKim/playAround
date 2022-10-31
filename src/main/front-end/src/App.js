@@ -9,6 +9,7 @@ import InstructorApp from "./components/InstructorApp";
 
 function App() {
 
+
     const [songs] = useState([
         {
             "musicId": 9,
@@ -65,23 +66,16 @@ function App() {
     const [currentSongIndex, setCurrentSongIndex] = useState(0);
     const [nextSongIndex, setNextSongIndex] = useState(currentSongIndex + 1);
     const [user,setUser]=useState([]);
+    const [hello, setHello] = useState('')
+
+
 
     useEffect(()=>{
-        // fetch("/hello")
-        //     .then((res)=>{
-        //         return res.json();
-        //     })
-        //     .then((data)=>{
-        //         setMessage(data);
-        //     })
-        axios.post("/api/users").then((response)=>{
-            if(response.data){
-                console.log(response.data);
-                setUser(response.data);
-            }else{
-                alert("failed to");
-            }
-        })
+        axios.get('/api/hello')
+            .then(response => setHello(response.data))
+            .catch(error => console.log(error))
+
+
         setNextSongIndex(()=>{
             if (currentSongIndex + 1 > songs.length - 1) {
                 return 0;
@@ -96,11 +90,13 @@ function App() {
         // <>
 
                 <div className="App">
+                    백엔드에서 가져온 데이터입니다 : {hello}
                     <Player currentSongIndex={currentSongIndex}
                             setCurrentSongIndex={setCurrentSongIndex}
                             nextSongIndex={nextSongIndex}
                             songs={songs} />
                     <InstructorApp />
+
                 </div>
         /*    </Route>*/
         /*    <Route path="/signup">*/
