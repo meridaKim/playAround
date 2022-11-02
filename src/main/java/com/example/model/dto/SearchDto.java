@@ -1,12 +1,24 @@
 package com.example.model.dto;
 
-import java.time.LocalDateTime;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class SearchDto {
     private Integer index;
-    private String title; //가게명
-    private String category; // 카테고리
-    private String address; //주소
-    private String roadAddress; //도로명
-    private LocalDateTime localDateTime; //날짜
+    private String place_name;
+    private String place_url;
+    private String id;
+    private String category_name;
+    private String category_group_name;
+    private String category_group_code;
+    private String phone;
+    private String address_name;
+    private String road_address_name;
+    private String distance;
+    private String x;
+    private String y;
 }

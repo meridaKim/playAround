@@ -15,7 +15,7 @@ public class SearchLocalReq {
     private String category_group_code="";
     private String x = "37.290202607550995";
     private String y = "127.0473970154108";
-    private int radius = 100;
+    private int radius = 2000;
     private String sort = "distance";
 
     public MultiValueMap<String, String> toMultiValueMap(){

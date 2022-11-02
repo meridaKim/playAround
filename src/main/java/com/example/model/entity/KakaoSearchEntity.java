@@ -17,4 +17,7 @@ public class KakaoSearchEntity extends SearchEntity{
     private String category_group_name;//중요카테고리 그룹명
     private String category_group_code;
     private String place_url;//장소상세정보
+    private String phone;
+
+
 }
