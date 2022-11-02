@@ -14,9 +14,9 @@ public class KakaoClientTest {
     @Test
     public void searchLocalTest(){
         var search = new SearchLocalReq();
-        search.setQuery("갈비집");
+        search.setCategory_group_code("MT1");
 
         var result = kakaoClient.searchLocal(search);
-        Assertions.assertNotNull(result.getItems().stream().findFirst().get().getCategory());
+        Assertions.assertNotNull(result.getDocuments().stream().findFirst().get().getCategory_group_code());
     }
 }

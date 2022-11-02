@@ -12,13 +12,15 @@ public class KakaoSearchRepositoryTest {
     @Autowired
     private KakaoSearchRepository kakaoSearchRepository;
 
+
     private KakaoSearchEntity create(){
         var localList = new KakaoSearchEntity();
-        localList.setTitle("title");
-        localList.setAddress("address");
-        localList.setCategory("category");
-        localList.setLocalDateTime(null);
-        localList.setRoadAddress("readAddress");
+        localList.setPlace_name("place_name");
+        localList.setAddress_name("address_name");
+        localList.setCategory_name("category_name");
+        localList.setRoad_address_name("road_address_name");
+        localList.setPlace_url("place_url");
+        localList.setCategory_group_code("category_group_code");
         return localList;
     }
     @Test
@@ -32,11 +34,11 @@ public class KakaoSearchRepositoryTest {
     public void updateTest(){
         var kakaoSearchEntity = create();
         var expected = kakaoSearchRepository.save(kakaoSearchEntity);
-        expected.setTitle("update test");
+        expected.setPlace_name("update test");
         var saveEntity = kakaoSearchRepository.save(expected);
 
 
-        Assertions.assertEquals("update test", saveEntity.getTitle());
+        Assertions.assertEquals("update test", saveEntity.getPlace_name());
         Assertions.assertEquals(1, kakaoSearchRepository.listAll().size());
     }
     @Test

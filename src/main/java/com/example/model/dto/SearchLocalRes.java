@@ -10,26 +10,39 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SearchLocalRes {
-    private String lastBuildDate;
-    private int total;
-    private int start;
-    private int display;
+    private int total_count;
+    private int pageable_count;
+    private Boolean is_end;
+    private List<SearchSameName> same_name;
 
-    private List<SearchLocalItem> items;
+
+    private List<LocalDocument> documents;
 
     @Data
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class SearchLocalItem{
-        private String title;
-        private String link;
-        private String description;
-        private String category;
-        private String telephone;
-        private String address;
-        private String roadAddress;
-        private int mapx;
-        private int mapy;
+    public static class LocalDocument{
+        private String place_name;
+        private String place_url;
+        private String id;
+        private String category_name;
+        private String category_group_name;
+        private String category_group_code;
+        private String phone;
+        private String address_name;
+        private String road_address_name;
+        private String distance;
+        private String x;
+        private String y;
 
     }
+    @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class SearchSameName{
+        private String[] region;
+        private String keyword;
+        private String selected_region;
+    }
+
 }

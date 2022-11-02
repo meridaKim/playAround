@@ -17,7 +17,7 @@ public class KakaoClient {
     @Value("${kakao.Authorization}")
     private String Authorization;
 
-    @Value("${kakao.url.search.local}")
+    @Value("${kakao.url.search.category}")
     private String kakaoLocalSearchUrl;
 
     public SearchLocalRes searchLocal(SearchLocalReq searchLocalReq){
@@ -27,7 +27,7 @@ public class KakaoClient {
                .encode()
                .toUri();
         var headers = new HttpHeaders();
-        headers.set("X-Authorization",Authorization);
+        headers.set("Authorization",Authorization);
         headers.setContentType(MediaType.APPLICATION_JSON);
 
         var httpEntity = new HttpEntity<>(headers);

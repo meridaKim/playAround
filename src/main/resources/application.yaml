@@ -1,5 +1,6 @@
 kakao:
   url:
     search:
-      local: https://dapi.kakao.com/v2/local/search/keyword.json
+      category: https://dapi.kakao.com/v2/local/search/category.json
+
   Authorization: KakaoAK f65e922eb2ea701c915e32b586928204
