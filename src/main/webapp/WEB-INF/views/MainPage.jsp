@@ -7,6 +7,7 @@
     <script type="text/javascript" src="/ajax_product/bootstrap/js/jquery-1.11.3.js"></script>
     <script type="text/javascript" src="/ajax_product/bootstrap/js/bootstrap.js"></script>
 </head>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <body>
 mainpage
 
@@ -27,10 +28,10 @@ mainpage
 
                             },
                             success : function(result){
-
+                                console.log("success");
                             },
                             error : function(){
-                                console.log("통신실패");
+                                console.log("failed");
                             }
                         })
                     },

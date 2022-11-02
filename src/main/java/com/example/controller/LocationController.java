@@ -22,7 +22,7 @@ public class LocationController {
     private LocationService LocationService;
 
     @RequestMapping(value = "selectList.do")
-    public void selectList(@RequestParam("locationLatitude") float locationLatitude, @RequestParam("locationLongitude") float locationLongitude) {
+    public String selectList(@RequestParam("locationLatitude") float locationLatitude, @RequestParam("locationLongitude") float locationLongitude) {
 
         Location l = new Location();
         l.setLocationLatitude(locationLatitude);
@@ -38,8 +38,7 @@ public class LocationController {
             int result = LocationService.updateCoordinate(l);
         }
 
-        System.out.println(1);
-        //return "redirect:/";
+        return "redirect:/";
     }
 
     @RequestMapping("locationMap")
