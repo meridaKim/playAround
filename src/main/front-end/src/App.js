@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React from "react";
-import {Link, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {useState, useEffect} from 'react';
 import './Player.css';
 import Player from "./components/Player";
@@ -87,25 +87,24 @@ function App() {
     },[currentSongIndex]);
 
     return (
-        // <>
 
-                <div className="App">
-                    백엔드에서 가져온 데이터입니다 : {hello}
-                    <Player currentSongIndex={currentSongIndex}
-                            setCurrentSongIndex={setCurrentSongIndex}
-                            nextSongIndex={nextSongIndex}
-                            songs={songs} />
-                    <InstructorApp />
+        <div className="App">
+                <Route exact path="/">
+                            백엔드에서 가져온 데이터입니다 : {hello}
+                            <Player currentSongIndex={currentSongIndex}
+                                    setCurrentSongIndex={setCurrentSongIndex}
+                                    nextSongIndex={nextSongIndex}
+                                    songs={songs} />
 
-                </div>
-        /*    </Route>*/
-        /*    <Route path="/signup">*/
-        /*        <div>회원가입페이지</div>*/
-        /*    </Route>*/
-        /*    <Route path="/signin">*/
-        /*        <Login />*/
-        /*    </Route>*/
-        /*</>*/
+                </Route>
+                <Route exact path="/signup">
+                    <div>회원가입페이지</div>
+                </Route>
+                <Route exact path="/signin">
+                    <Login />
+                </Route>
+        </div>
+
     );
 }
 

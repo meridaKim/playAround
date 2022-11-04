@@ -1,52 +1,50 @@
 package com.example.controller;
 
-import com.example.model.entity.Users;
-import com.example.repository.UserRepository;
-//import com.example.service.LoginService;
+import com.example.model.dto.MemberResponseDto;
 import com.example.service.MemberService;
 import lombok.RequiredArgsConstructor;
-import org.apache.catalina.User;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
+@RequestMapping("/api")
+@CrossOrigin(origins = "*")
 @RequiredArgsConstructor
-public class    LoginController {
-    @Autowired
-    private MemberService memberService;
+public class LoginController {
 
-    @GetMapping("/")
-    public String firstform() {
-        return "first";
-    }
+    private final MemberService memberService;
 
-    @GetMapping(value = {"/login","/login.html"})
-    public String loginform() {
-        return "login";
-    }
-    @PostMapping("/login/test")
-    public String loginAction(@ModelAttribute Users users) {
-        if(memberService.login(users)){
-            return "redirect:/";
-        }
-        return "main";
-    }
+//    @GetMapping("/")
+//    public String firstform() {
+//        return "first";
+//    }
 
-//    @PostMapping("/login/test")
-//    public String loginAction(Users users, Model model) {
-//        model.addAttribute("info", memberService.login(users));
+//    @GetMapping(value = {"/login","/login.html"})
+//    public String loginform() {
+//        return "login";
+//    }
+
+//    @PostMapping("/api/login")
+//    public String loginAction(@ModelAttribute Users users) {
+//        if(memberService.login(users)){
+//            return "redirect:/";
+//        }
 //        return "main";
 //    }
-    /*kakao 로그인*/
-//    @GetMapping("/user/kakao/callback")
-//    public String kakaoLogin(String code) {
-//        MemberService.kakaoLogin(code);
-//        return "redirect:/";
+
+//    @PostMapping("/login")
+//    public String loginAction(@ModelAttribute User users) {
+//        if(memberService.login(users)){
+//            return "redirect:/";
+//        }
+//        return "main";
 //    }
+
+    @PostMapping("/login")
+    public MemberResponseDto login(@RequestBody final MemberResponseDto params){
+        MemberResponseDto entity = memberService.findBy(params);
+        return entity;
+    }
+
+
 
 }

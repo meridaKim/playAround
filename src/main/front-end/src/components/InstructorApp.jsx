@@ -1,22 +1,27 @@
 import React, { Component } from 'react';
 import ListPlaylistComponent from './ListPlaylistComponent';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Login from "./Login";
 
 
 class InstructorApp extends Component {
     render() {
         return (
+            <>
+
             <Router>
                 <>
-                    <h1>플레이리스트를 가져오자</h1>
-                    <ListPlaylistComponent/>
-                    {/*<Switch>*/}
-                    {/*    <Route path="/" exact component={ListPlaylistComponent} />*/}
-                    {/*    <Route path="/courses" exact component={ListPlaylistComponent} />*/}
 
-                    {/*</Switch>*/}
+                        <Route exact path="/signup">
+                            <div>회원가입페이지</div>
+                        </Route>
+                        <Route exact path="/signin">
+                            <Login />
+                        </Route>
+
                 </>
             </Router>
+            </>
         )
     }
 }
