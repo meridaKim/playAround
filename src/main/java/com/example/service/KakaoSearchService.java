@@ -7,7 +7,7 @@ import com.example.model.entity.KakaoSearchEntity;
 import com.example.repository.KakaoSearchRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
+import java.util.stream.Collectors;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -25,19 +25,23 @@ public class KakaoSearchService extends KakaoSearchEntity {
 
         var searchLocalRes = kakaoClient.searchLocal(searchLocalReq);
 
-        if(searchLocalRes.getTotal_count()>0){
+        if(searchLocalRes.getTotal_count()>=0){
             var localDocument = searchLocalRes.getDocuments().stream().findFirst().get();
             var result = new SearchDto();
-            result.setCategory_group_code(localDocument.getCategory_group_code());
             result.setPlace_name(localDocument.getPlace_name());
-            result.setCategory_name(localDocument.getCategory_name());
             result.setPlace_url(localDocument.getPlace_url());
+            result.setId(localDocument.getId());
+            result.setCategory_name(localDocument.getCategory_name());
+            result.setCategory_group_name(localDocument.getCategory_group_name());
+            result.setCategory_group_code(localDocument.getCategory_group_code());
+            result.setPhone(localDocument.getPhone());
             result.setAddress_name(localDocument.getAddress_name());
             result.setRoad_address_name(localDocument.getRoad_address_name());
-            result.setPlace_url(localDocument.getPlace_url());
-            result.setPhone(localDocument.getPhone());
-
+            result.setDistance(localDocument.getDistance());
+            result.setX(localDocument.getX());
+            result.setY(localDocument.getY());
             return result;
+
         }
         return new SearchDto();
     }

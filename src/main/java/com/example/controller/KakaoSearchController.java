@@ -18,13 +18,14 @@ public class KakaoSearchController {
     public SearchDto search(@RequestParam String category_group_name){
         return kakaoSearchService.search(category_group_name);
     }
-//    @PostMapping("")
-//    public SearchDto add(@RequestBody SearchDto searchDto){
-//        log.info("{}",searchDto);
-//        return kakaoSearchService.add(searchDto);
-//    }
-//    @GetMapping("/all")
-//    public List<SearchDto> findAll(){
-//        return kakaoSearchService.findAll();
-//    }
+    @PostMapping("")
+    public SearchDto add(@RequestBody SearchDto searchDto){
+        log.info("{}",searchDto);
+        return kakaoSearchService.add(searchDto);
+}
+    @GetMapping("/all")
+
+    public List<SearchDto> findAll(){
+        return kakaoSearchService.findAll();
+    }
 }
