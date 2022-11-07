@@ -5,6 +5,8 @@ import com.example.service.LocationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.BufferedWriter;
@@ -19,13 +21,13 @@ public class LocationController {
     @Autowired
     private LocationService LocationService;
 
-    @RequestMapping("location.lo")
-    public String selectList(float locationLatitude, float locationLongitude, Long userNo) {
+    @RequestMapping(value = "selectList.do")
+    public String selectList(@RequestParam("locationLatitude") float locationLatitude, @RequestParam("locationLongitude") float locationLongitude) {
 
         Location l = new Location();
         l.setLocationLatitude(locationLatitude);
         l.setLocationLongitude(locationLongitude);
-        l.setUserNo(userNo);
+        //l.setUserNo(userNo);
 
         int listCount = LocationService.selectListCount(l);
 
@@ -63,7 +65,7 @@ public class LocationController {
 
         // 본인 환경에 따라 new File 부분의 경로를 수정 해주세요.
         // ex. D:\\test\\resources\\kakaoMap/kakaoMap.json
-        File myFile = new File("~~~~\\resources\\kakaoMap/kakaoMap.json");
+        File myFile = new File("/Users/bona/playAround/src/main/resources/kakaoMap/kakaoMap.json");
         try {
             if(myFile.exists()){
                 myFile.delete();
@@ -72,6 +74,7 @@ public class LocationController {
             BufferedWriter writer = new BufferedWriter(new FileWriter(myFile));
             writer.write(data);
             writer.close();
+            System.out.println("success");
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("예외 처리");

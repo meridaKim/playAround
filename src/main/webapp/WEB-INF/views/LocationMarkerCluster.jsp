@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,14 +9,14 @@
 <body>
 <br><br><br><br>
 <div id="map" style="width:100%;height:350px;"></div>
-
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <!-- API Key 입력 필요 -->
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9e851462960aebb3a3c72b682b9b4e48&libraries=clusterer"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3df00acbc8d0180df86d322835eaee2c&libraries=clusterer"></script>
 <script>
     $.ajax({
         // url은 본인의 환경에 따라 작성 합니다.
         url : "locationMapList.lo",
-        data : {},
+        data: {},
         success : function(result){
             var map = new kakao.maps.Map(document.getElementById('map'), { // 지도를 표시할 div
                 center : new kakao.maps.LatLng(36.2683, 127.6358), // 지도의 중심좌표
@@ -31,7 +32,7 @@
 
             // 데이터를 가져오기 위해 jQuery를 사용합니다
             // 데이터를 가져와 마커를 생성하고 클러스터러 객체에 넘겨줍니다
-            $.get("resources/kakaoMap/kakaoMap.json", function(data) {
+            $.get("kakaoMap.json", function(data) {
                 // 데이터에서 좌표 값을 가지고 마커를 표시합니다
                 // 마커 클러스터러로 관리할 마커 객체는 생성할 때 지도 객체를 설정하지 않습니다
                 var markers = $(data.positions).map(function(i, position) {
