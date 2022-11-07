@@ -41,7 +41,7 @@ public class LocationController {
         return "redirect:/";
     }
 
-    @RequestMapping("locationMap")
+    @RequestMapping("locationMap.lo")
     public String selectMap() {
 
         return "location/location";
@@ -65,7 +65,7 @@ public class LocationController {
 
         // 본인 환경에 따라 new File 부분의 경로를 수정 해주세요.
         // ex. D:\\test\\resources\\kakaoMap/kakaoMap.json
-        File myFile = new File("~~~~\\resources\\kakaoMap/kakaoMap.json");
+        File myFile = new File("/Users/bona/playAround/src/main/resources/kakaoMap/kakaoMap.json");
         try {
             if(myFile.exists()){
                 myFile.delete();
@@ -74,6 +74,7 @@ public class LocationController {
             BufferedWriter writer = new BufferedWriter(new FileWriter(myFile));
             writer.write(data);
             writer.close();
+            System.out.println("success");
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("예외 처리");
