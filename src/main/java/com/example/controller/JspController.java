@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class JspController {
     @RequestMapping("/")
     public ModelAndView jsp(){
-        ModelAndView model = new ModelAndView("LocationMarkerCluster");
+        ModelAndView model = new ModelAndView("MainPage");
         return model;
     }
 }

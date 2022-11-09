@@ -14,7 +14,7 @@ public class LoginController {
     public String androidResponse(@RequestBody User user){
 
         System.out.println("CONNECT ANDROID");
-        System.out.println("id: "+user.getUserId() + ", pw: " + user.getUserPw());
+        System.out.println("id: "+user.getUserNo() + ", pw: " + user.getUserPw());
 
         return "1";
     }
