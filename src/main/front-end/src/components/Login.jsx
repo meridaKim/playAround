@@ -28,7 +28,7 @@ const Container = styled.div`
       border-left: 1.30114px solid #474747;
 `;
 
-const LoginForm = styled.div`
+const LoginForm = styled.form`
       display:grid;
       grid-template-rows;
       width:405px;
@@ -100,41 +100,42 @@ const Footer = styled.footer`
 
 function Login(props){
 
-
-
-    const [id, setInputId] = useState('')
-    const [check,setCheck] = useState('')
+    const [inputId, setInputId] = useState('')
     const [inputPw, setInputPw] = useState('')
 
 
 //login 버튼 클릭
-//     const onSubmit = (e) => {
-//         console.log("click login");
-//         console.log("ID :", inputId);
-//         console.log("PW :", inputPw);
-//
-//         e.preventDefault();
-//
-//         const formData = new FormData(e.target);
-//
-//         axios.post("/api/login", {
-//             method: "POST",
-//             headers: {
-//                 Accept: "application/json",
-//                 "Content-Type": "application/json",
-//             },
-//             body: JSON.stringify({
-//                 email: formData.get('email'),
-//                 password: formData.get('password'),
-//             }),
-//         }) .then((r) => r.json())
-//             .then((data) =>{
-//                 console.log(data);
-//             })
-//             .catch((err) => err);
-//         }
+    const onSubmit = (e) => {
+        console.log("click login");
+        console.log("ID :", inputId);
+        console.log("PW :", inputPw);
+
+        e.preventDefault();
+
+        const formData = new FormData(e.target);
+
+        axios.post("/api/login", {
+            method: "POST",
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                email: formData.get('email'),
+                password: formData.get('password'),
+            }),
+        }) .then((r) => r.json())
+            .then((data) =>{
+                console.log(data);
+            })
+            .catch((err) => err);
+        }
+
+
 
     return (
+
+
         <Container>
             <GlobalStyle />
             <LoginForm>
@@ -143,15 +144,13 @@ function Login(props){
                 <Input onChange={(e)=>{setInputId(e.target.value);}}/>
                 <P>PASSWORD</P>
                 <Input onChange={(e)=>{setInputPw(e.target.value);}}/>
-                <Button onClick={
-                    ()=>{
-                    axios.get('/api/login',{
+                <Button onClick={()=>{
+                    axios.post(('/api/login'),null,{
                         params:{
-                            id:id
+                            userId:inputId
                         }
-                    }).then((res)=>{
-                        console.log(res);
-                        sessionStorage.setItem("name",res.data);
+                    }).then(r=>{
+                        console.log(r);
                     })
                     window.location.href = "/";
                 }}><img src="./logos/login_button.png" /></Button>
