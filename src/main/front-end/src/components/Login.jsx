@@ -28,7 +28,7 @@ const Container = styled.div`
       border-left: 1.30114px solid #474747;
 `;
 
-const LoginForm = styled.form`
+const LoginForm = styled.div`
       display:grid;
       grid-template-rows;
       width:405px;
@@ -145,12 +145,12 @@ function Login(props){
                 <P>PASSWORD</P>
                 <Input onChange={(e)=>{setInputPw(e.target.value);}}/>
                 <Button onClick={()=>{
-                    axios.post(('/api/login'),null,{
+                    axios.get(('/api/login'),{
                         params:{
                             userId:inputId
                         }
-                    }).then(r=>{
-                        console.log(r);
+                    }).catch(function(){
+                        console.log('못받음')
                     })
                     window.location.href = "/";
                 }}><img src="./logos/login_button.png" /></Button>
