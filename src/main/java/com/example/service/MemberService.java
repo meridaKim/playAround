@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 
 @Service
@@ -24,7 +25,6 @@ public class MemberService{
 
     /*로그인*/
     public static User login(User users){
-
       User users1= userRepository.findByUserId(users.getUserId());
       if(users1==null){
            return null;
@@ -35,8 +35,8 @@ public class MemberService{
         }
        return users1;
     }
-//   public List<Users> login(Users users){
-//      return userRepository.findAllByUserId(users.getUserId());
-//   }
+   public List<User> getAlluser(User users){
+      return userRepository.findAllByUserId(users.getUserId());
+   }
 
 }
