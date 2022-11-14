@@ -1,45 +1,22 @@
 package com.example.model.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-
 @Entity
-@Getter
-@Setter
+@Data
 public class User {
     @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
 //    @GenericGenerator(name="system-uuid", strategy = "uuid")
     private String userId;
-
     private String userPw;
     private String userAge;
     private String userName;
     private boolean localAgree;
     private String userEmail;
-
-    public User() {
-
-    }
-
-
-//
-//    public User(String userId, String userPw){
-//        super();
-//        this.userId = userId;
-//        this.userPw = userPw;
-//    }
-//
-//    public User() {
-//
-//    }
-
-
-
     /*kakao,naver,google*/
 //    private String provider;
 //    @Builder
