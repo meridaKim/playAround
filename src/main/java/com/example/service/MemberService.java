@@ -22,11 +22,11 @@ public class MemberService{
     }
 
     /*로그인*/
-    public MemberResponseDto findBy(final MemberResponseDto params){
-        MemberResponseDto entity = UserRepository.findByUserId(params.getUserId());
-        return entity;
-    }
-//    public List<Users> login(Users users){
+//    public MemberResponseDto findBy(final MemberResponseDto params){
+//        MemberResponseDto entity = UserRepository.findByUserId(params.getUserId());
+//        return entity;
+//    }
+//    public List<User> login(Users users){
 //        return userRepository.findAllByUserId(users.getUserId());
 //    }
 

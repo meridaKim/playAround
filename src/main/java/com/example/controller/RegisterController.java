@@ -22,14 +22,6 @@ public class RegisterController {
     public String registerAction(User users) {
         System.out.println("All:" + users);
         memberService.register(users);
-        return "";
+        return "redirect:/first";
     }
-
-//    @GetMapping("/login")
-//    public String my_id() {
-//        System.out.println("hi");
-//        model.addAttribute("my_id",registerService.my_id());
-//        return "first";
-//
-//    }
 }
