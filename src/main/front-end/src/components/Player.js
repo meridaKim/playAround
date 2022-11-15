@@ -6,12 +6,23 @@ import PlayerControls from "./PlayerControls";
 function Player(props) {
     const audioElement = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
+    const [isLogin, setIsLogin] = useState(false); //로그인 관리
 
     useEffect(() => {
         if (isPlaying) {
             audioElement.current.play();
         } else {
             audioElement.current.pause();
+        }
+
+        if (sessionStorage.getItem("name") === null) {
+            // sessionStorage 에 name 라는 key 값으로 저장된 값이 없다면
+            console.log("isLogin ?? :: ", isLogin);
+        } else {
+            // sessionStorage 에 name 라는 key 값으로 저장된 값이 있다면
+            // 로그인 상태 변경
+            setIsLogin(true);
+            console.log("isLogin ?? :: ", isLogin);
         }
     });
 
@@ -55,7 +66,10 @@ function Player(props) {
                         <div className="space">space</div>
                     </div>
 
-                    <Link to="/signin"><div className="user">로그인</div></Link>
+                    {isLogin ? (
+                        <Link to={`/Mypage`} className="user">{sessionStorage.getItem("name")}님</Link>
+                    ):(
+                    <Link to="/signin"><div className="user">로그인</div></Link>)}
                 </div>
                 <div className="location">
                     <div className="item">지금나는?</div>
