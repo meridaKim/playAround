@@ -2,6 +2,13 @@ import React, { useState, useRef, useEffect } from "react";
 import {Link, Route, Switch} from 'react-router-dom';
 import PlayerDetail from "./PlayerDetail";
 import PlayerControls from "./PlayerControls";
+import styled from "styled-components";
+
+
+const Button = styled.button`
+    background-color:transparent;
+    border-color:transparent;
+`;
 
 function Player(props) {
     const audioElement = useRef(null);
@@ -68,8 +75,20 @@ function Player(props) {
 
                     {isLogin ? (
                         <Link to={`/Mypage`} className="user">{sessionStorage.getItem("name")}님</Link>
-                    ):(
-                    <Link to="/signin"><div className="user">로그인</div></Link>)}
+                    )
+                        :(<Link to="/signin"><div className="user">로그인</div></Link>)
+                    }
+                    {isLogin ?
+                            <Button onClick={()=>{
+                                setIsLogin(false);
+                                console.log("isLogin ?? :: ", isLogin);
+                                sessionStorage.removeItem("name");
+                            }
+                            }>로그아웃 </Button>
+
+                        :   <div></div>
+
+                    }
                 </div>
                 <div className="location">
                     <div className="item">지금나는?</div>
