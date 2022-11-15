@@ -152,8 +152,9 @@ function Login(props){
                         }
                     }).then((res)=>{
                         console.log(res);
+                        sessionStorage.setItem("name",res.data);
                     })
-                    // window.location.href = "/";
+                    window.location.href = "/";
                 }}><img src="./logos/login_button.png" /></Button>
                 <Signup><SignupText>아이디가 없으신가요?</ SignupText><SignupText><Link to="/signup">회원가입</Link></SignupText></Signup>
             </LoginForm>
