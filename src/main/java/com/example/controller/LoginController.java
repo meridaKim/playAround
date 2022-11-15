@@ -6,32 +6,22 @@ import com.example.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
+
 @RestController
-@CrossOrigin("*")
+@CrossOrigin(origins = "*")
 @RequiredArgsConstructor
+@Controller
 public class LoginController {
 
-    @Autowired
-    private static UserRepository userRepository;
 
     @Autowired
-    private final MemberService memberService;
+    UserRepository userRepository;
 
-    @GetMapping("/")
-    public String firstform() {
-        return "first";
-    }
+    @Autowired
+    MemberService memberService;
 
-    @GetMapping(value = {"/login2","/login.html"})
-    public String loginform() {
-        return "login";
-    }
 
 
 //    @PostMapping("/api/login")
@@ -42,15 +32,13 @@ public class LoginController {
 //    }
 
     @GetMapping("/api/login")
-    public String loginAction(@RequestParam String id) {
+    public String loginAction(@RequestParam(value="id", required = false) String id) {
         User users1= userRepository.findByUserId(id);
         if(users1==null){
             return null;
         }
         return users1.getUserId();
     }
-
-
 
 
 

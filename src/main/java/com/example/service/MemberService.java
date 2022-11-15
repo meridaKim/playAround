@@ -25,18 +25,18 @@ public class MemberService{
 
     /*로그인*/
     public static User login(User users){
-      User users1= userRepository.findByUserId(users.getUserId());
-      if(users1==null){
-           return null;
-       }
-
-       if(!users1.getUserPw().equals(users.getUserPw())){
-           return null;
+        User users1= userRepository.findByUserId(users.getUserId());
+        if(users1==null){
+            return null;
         }
-       return users1;
+
+        if(!users1.getUserPw().equals(users.getUserPw())){
+            return null;
+        }
+        return users1;
     }
-   public List<User> getAlluser(User users){
-      return userRepository.findAllByUserId(users.getUserId());
-   }
+    public List<User> getAlluser(User users){
+        return userRepository.findAllByUserId(users.getUserId());
+    }
 
 }
