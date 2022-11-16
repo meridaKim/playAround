@@ -99,6 +99,31 @@ body {
   background: rgba(211, 3, 32, 0.95);
 }
 
+.details-title{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #474747;
+}
+
+.details-artist{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 27px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #474747;
+}
 /* Controls */
 
 .music-player--controls {
