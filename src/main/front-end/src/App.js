@@ -6,6 +6,7 @@ import './Player.css';
 import Player from "./components/Player";
 import Login from "./components/Login";
 import InstructorApp from "./components/InstructorApp";
+import Map from "./components/Map";
 
 function App() {
 
@@ -103,6 +104,10 @@ function App() {
                 <Route exact path="/signin">
                     <Login />
                 </Route>
+
+            <Route exact path="/map">
+                <Map />
+            </Route>
         </div>
 
     );
