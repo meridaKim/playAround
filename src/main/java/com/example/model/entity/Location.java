@@ -15,8 +15,9 @@ public class Location {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long locationNo;
 
-    @OneToMany(mappedBy = "location")
-    private List<UserLocation> userLocationList = new ArrayList<>();
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "user_no")
+    private User user;
 
     private float locationLatitude;
 

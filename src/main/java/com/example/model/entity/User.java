@@ -12,24 +12,22 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="user_no",length = 100)
+    @Column(name="user_no")
     private String userNo;
 
     @Column(name="user_pw")
     private String userPw;
-//    private String userName;
-//    private int localAgree;
 
-    public User(){}
+    @OneToOne(mappedBy = "user")
+    private Location location;
 
-    public User(String userNo, String userPw){
-        this.userNo = userNo;
-        this.userPw = userPw;
-    }
+    private String userName;
+    private String userGender;
+    private String userEmail;
 
-    @OneToMany(mappedBy = "user")
-    private List<UserLocation> userLocationList = new ArrayList<>();
+
 
     @OneToMany(mappedBy = "user")
     private List<Playlist> playlists = new ArrayList<>();
+
 }

@@ -40,6 +40,8 @@ mainpage
 
         </script>
 
+        <a href="LocationMarkerCluster.do">show markers</a>
+
 </body>
 
 </html>
