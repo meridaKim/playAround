@@ -24,6 +24,15 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     annotationProcessor 'org.projectlombok:lombok'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    //MyBatis 추가
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
+    // https://mvnrepository.com/artifact/javax.servlet/jstl
+    implementation group: 'javax.servlet', name: 'jstl', version: '1.2'
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+    implementation 'javax.servlet:jstl'
+
+
+
     runtimeOnly 'mysql:mysql-connector-java'
     //implementation 'android.arch.persistence.room:runtime:1.1.1'
     //annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
@@ -31,6 +40,8 @@ dependencies {
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+
     // Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.6.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.6.0'

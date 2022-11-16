@@ -18,7 +18,22 @@ public class    Playlist {
     @JoinColumn(name="music_id")
     private Music music;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User user;
+    public Playlist(long id, String username, String description) {
+        super();
+        this.playlistId = id;
+        this.username = username;
+        this.countPlaylist = description;
+    }
+
+    public Playlist() {
+
+    }
+
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name="music_id")
+//    private Music music;
+//
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "user_id")
+//    private User user;
 }

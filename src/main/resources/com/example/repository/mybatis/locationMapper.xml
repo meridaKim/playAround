@@ -6,7 +6,7 @@
     <select id="selectListCount" resultType="_int">
         SELECT COUNT(*)
         FROM LOCATION
-        WHERE USER_NO = #{userNo}
+        WHERE USER_NO = #{user.userNo}
     </select>
 
     <insert id="insertCoordinate" parameterType="location">
@@ -19,7 +19,7 @@
         )
         VALUES (
                        (select *from (select max(LOCATION_NO)+1 from LOCATION) next),
-                   #{userNo},
+                   #{user.userNo},
                    #{locationLatitude},
                    #{locationLongitude},
                    NOW()
@@ -30,7 +30,7 @@
         UPDATE LOCATION
         SET LOCATION_LATITUDE = #{locationLatitude},
             LOCATION_LONGITUDE = #{locationLongitude}
-        WHERE USER_NO = #{userNo}
+        WHERE Lo = #{user.userNo}
     </update>
 
 

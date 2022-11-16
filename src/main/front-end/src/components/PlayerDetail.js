@@ -10,11 +10,11 @@ function PlayerDetail(props) {
                     alt={props.song.musicName}
                 />
             </div>
-            <div class="range"></div>
+            {/*<div class="range"></div>*/}
             <div className="artist-info">
-                <h3 className="details-title">{props.song.musicName}</h3>
-                <h4 className="details-artist">{props.song.singerName}</h4>
-                <div class="line"></div>
+                <div className="details-title">{props.song.musicName}</div>
+                <div className="details-artist">{props.song.singerName}</div>
+                <div className="line"></div>
             </div>
         </div>
     );
