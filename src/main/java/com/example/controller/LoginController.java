@@ -23,6 +23,14 @@ public class LoginController {
     MemberService memberService;
 
 
+
+//    @PostMapping("/api/login")
+//    public String loginAction(@ModelAttribute User users) {
+//        System.out.println(users.getUserId());
+//        System.out.println(users.getUserPw());
+//        return MemberService.login(users).getUserId();
+//    }
+
     @GetMapping("/api/login")
     public String loginAction(@RequestParam(value="id", required = false) String id) {
         User users1= userRepository.findByUserId(id);
