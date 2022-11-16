@@ -1,43 +1,48 @@
 package com.example.controller;
 
-import com.example.model.entity.User;
-import com.example.repository.UserRepository;
+import com.example.model.dto.MemberResponseDto;
 import com.example.service.MemberService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-
 @RestController
+@RequestMapping("/api")
 @CrossOrigin(origins = "*")
 @RequiredArgsConstructor
-@Controller
 public class LoginController {
 
+    private final MemberService memberService;
 
-    @Autowired
-    UserRepository userRepository;
-
-    @Autowired
-    MemberService memberService;
-
-
-
-//    @PostMapping("/api/login")
-//    public String loginAction(@ModelAttribute User users) {
-//        System.out.println(users.getUserId());
-//        System.out.println(users.getUserPw());
-//        return MemberService.login(users).getUserId();
+//    @GetMapping("/")
+//    public String firstform() {
+//        return "first";
 //    }
 
-    @GetMapping("/api/login")
-    public String loginAction(@RequestParam(value="id", required = false) String id) {
-        User users1= userRepository.findByUserId(id);
-        if(users1==null){
-            return null;
-        }
-        return users1.getUserId();
+//    @GetMapping(value = {"/login","/login.html"})
+//    public String loginform() {
+//        return "login";
+//    }
+
+//    @PostMapping("/api/login")
+//    public String loginAction(@ModelAttribute Users users) {
+//        if(memberService.login(users)){
+//            return "redirect:/";
+//        }
+//        return "main";
+//    }
+
+//    @PostMapping("/login")
+//    public String loginAction(@ModelAttribute User users) {
+//        if(memberService.login(users)){
+//            return "redirect:/";
+//        }
+//        return "main";
+//    }
+
+    @PostMapping("/login")
+    public MemberResponseDto login(@RequestBody final MemberResponseDto params){
+        MemberResponseDto entity = memberService.findBy(params);
+        return entity;
     }
 
 
