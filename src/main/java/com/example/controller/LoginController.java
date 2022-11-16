@@ -1,21 +1,37 @@
 package com.example.controller;
 
 import com.example.model.entity.User;
+import com.example.repository.UserRepository;
+import com.example.service.MemberService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
+
+@RestController
+@CrossOrigin(origins = "*")
+@RequiredArgsConstructor
 @Controller
 public class LoginController {
 
-    @PostMapping(value="login")
-    @ResponseBody
-    public String androidResponse(@RequestBody User user){
 
-        System.out.println("CONNECT ANDROID");
-        System.out.println("id: "+user.getUserId() + ", pw: " + user.getUserPw());
+    @Autowired
+    UserRepository userRepository;
 
-        return "1";
+    @Autowired
+    MemberService memberService;
+
+
+    @GetMapping("/api/login")
+    public String loginAction(@RequestParam(value="id", required = false) String id) {
+        User users1= userRepository.findByUserId(id);
+        if(users1==null){
+            return null;
+        }
+        return users1.getUserId();
     }
+
+
+
 }
