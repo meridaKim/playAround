@@ -5,16 +5,15 @@
     <title>Login</title>
 </head>
 <body>
-    <form method="post" action="/login">
-        ID :<input type="text" name="userId" placeholder="Id"><br>
-        PASSWORD : <input type="password" name="userPw" placeholder="Password"><br>
+<form method="post" action="/login">
+    ID :<input type="text" name="userId" placeholder="Id"><br>
+    PASSWORD : <input type="password" name="userPw" placeholder="Password"><br>
     <button type="submit">로그인</button>
     <a href="https://kauth.kakao.com/oauth/authorize?client_id=${257269d1a79af72d3e862754a8bcbcd4}&redirect_uri=${http://localhost:8080}&response_type=code HTTP/1.1">
         <img height="38px" src="/static/image/kakao_login_large_narrow.png"></a>
 
-        <br><br>
-        <a href="/form/loginInfo">Form 로그인 정보</a>
-        <!--        https://kauth.kakao.com/oauth/authorize?client_id=${257269d1a79af72d3e862754a8bcbcd4}&redirect_uri=${http://localhost:8080}&response_type=code HTTP/1.1-->
-    </form>
+
+    <!--        https://kauth.kakao.com/oauth/authorize?client_id=${257269d1a79af72d3e862754a8bcbcd4}&redirect_uri=${http://localhost:8080}&response_type=code HTTP/1.1-->
+</form>
 </body>
 </html>

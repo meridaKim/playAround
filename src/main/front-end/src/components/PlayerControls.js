@@ -8,8 +8,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 function PlayerControls(props) {
+
     return (
         <div className="music-player--controls">
+
             <div className="random-play">
             <a href="#" className="list__link">
                 <img

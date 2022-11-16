@@ -72,7 +72,7 @@ const Button = styled.button`
     background-color:transparent;
     border-color:transparent;
 `;
-const Signup = styled.div`
+const signup = styled.div`
     display:grid;
     margin:auto;
     grid-template-columns: 200px 75px;
@@ -98,73 +98,53 @@ const Footer = styled.footer`
 `;
 
 
-function Login(props){
+function Signup(props){
 
 
 
-    const [id, setInputId] = useState('')
-    const [check,setCheck] = useState('')
-    const [inputPw, setInputPw] = useState('')
+    const [userId, setInputId] = useState('')
+    const [userPw,setInputName] = useState('')
+    const [userName, setInputPw] = useState('')
 
-
-//login 버튼 클릭
-//     const onSubmit = (e) => {
-//         console.log("click login");
-//         console.log("ID :", inputId);
-//         console.log("PW :", inputPw);
-//
-//         e.preventDefault();
-//
-//         const formData = new FormData(e.target);
-//
-//         axios.post("/api/login", {
-//             method: "POST",
-//             headers: {
-//                 Accept: "application/json",
-//                 "Content-Type": "application/json",
-//             },
-//             body: JSON.stringify({
-//                 email: formData.get('email'),
-//                 password: formData.get('password'),
-//             }),
-//         }) .then((r) => r.json())
-//             .then((data) =>{
-//                 console.log(data);
-//             })
-//             .catch((err) => err);
-//         }
 
     return (
         <Container>
             <GlobalStyle />
             <LoginForm>
-                <LoginName>로그인</LoginName>
+                <LoginName>회원가입</LoginName>
                 <P>ID</P>
                 <Input onChange={(e)=>{setInputId(e.target.value);}}/>
                 <P>PASSWORD</P>
                 <Input onChange={(e)=>{setInputPw(e.target.value);}}/>
+                <P>닉네임</P>
+                <Input onChange={(e)=>{setInputName(e.target.value);}}/>
                 <Button onClick={
                     ()=>{
-                    axios.get('/api/login',{
-                        params:{
-                            id:id
-                        }
-                    }).then((res)=>{
-                        console.log(res);
-                        sessionStorage.setItem("name",res.data);
-                    })
-                    window.location.href = "/";
-                }}><img src="./logos/login_button.png" /></Button>
-                <Signup><SignupText>아이디가 없으신가요?</ SignupText><SignupText><Link to="/signup">회원가입</Link></SignupText></Signup>
+                        axios.get('/api/signup',{
+                            params:{
+                                userId:userId,
+                                userPw:userPw,
+                                userName:userName
+                            }
+                        }).then((res)=>{
+                            console.log(res);
+                        })
+                        window.location.href = "/";
+                    }}><img src="./logos/login_button.png" /></Button>
+
             </LoginForm>
             <Footer>
-                <img
+                <Button onClick={
+                    ()=>{
+                        window.location.href = "/";
+                    }
+                }><img
                     src="./logos/songplace.png"
-                />
+                /></Button>
             </Footer>
         </Container>
 
     );
 }
 
-export default Login;
+export default Signup;
