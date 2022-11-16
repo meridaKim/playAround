@@ -1,52 +1,22 @@
 package com.example.model.entity;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.Data;
 
-import javax.persistence.*;
-
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
-@Getter
-@Setter
+@Data
 public class User {
     @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
 //    @GenericGenerator(name="system-uuid", strategy = "uuid")
     private String userId;
-    @Setter
     private String userPw;
     private String userAge;
     private String userName;
     private boolean localAgree;
     private String userEmail;
-//  권한
-    @Setter
-    private Role role;
-    public User(String userId, String userPw,String userName,boolean localAgree, Role role,String userEmail) {
-        this.userId = userId;
-        this.userPw = userPw;
-        this.userName=userName;
-        this.localAgree=localAgree;
-        this.userEmail = userEmail;
-        this.role = role;
-    }
-
-
-//
-//    public User(String userId, String userPw){
-//        super();
-//        this.userId = userId;
-//        this.userPw = userPw;
-//    }
-//
-//    public User() {
-//
-//    }
-
-
-
     /*kakao,naver,google*/
 //    private String provider;
 //    @Builder
