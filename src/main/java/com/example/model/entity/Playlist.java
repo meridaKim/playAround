@@ -7,17 +7,15 @@ import javax.persistence.*;
 
 @Entity
 @Getter@Setter
-public class Playlist {
-    @Id
-    @Column(name = "playlistId", nullable = false)
-    private Long playlistId;
-
-
-    private String username;
+public class    Playlist {
+    @javax.persistence.Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "playlist_id", length = 100)
+    private int playlistId;
     private String countPlaylist;
 
-    @ManyToOne
-    @JoinColumn(name = "music_music_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="music_id")
     private Music music;
 
     public Playlist(long id, String username, String description) {

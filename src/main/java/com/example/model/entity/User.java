@@ -3,60 +3,36 @@ package com.example.model.entity;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
-@Getter
-@Setter
+@Getter@Setter
 public class User {
-    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @GenericGenerator(name="system-uuid", strategy = "uuid")
-    private String userId;
 
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="user_no")
+    private String userNo;
+
+    @Column(name="user_pw")
     private String userPw;
-    private String userAge;
+//    private String userName;
+//    private int localAgree;
+
+    @OneToOne(mappedBy = "user")
+    private Location location;
+
     private String userName;
-    private boolean localAgree;
+    private String userGender;
     private String userEmail;
 
-    public User() {
-
-    }
 
 
-//
-//    public User(String userId, String userPw){
-//        super();
-//        this.userId = userId;
-//        this.userPw = userPw;
-//    }
-//
-//    public User() {
-//
-//    }
+    @OneToMany(mappedBy = "user")
+    private List<Playlist> playlists = new ArrayList<>();
 
-
-
-    /*kakao,naver,google*/
-//    private String provider;
-//    @Builder
-//    public Users(String userId, String userName, String userPw, String userAge){
-//        this.userId= userId;
-//        this.userPw= userPw;
-//        this.userAge= userAge;
-//        this.userName= userName;
-//        this.localAgree= localAgree;
-//    }
-
-//    @Override
-//    public String toString(){
-//        return "User{id="+userId+"pw="+userPw+"};";
-//    }
-//
-//
-//    @OneToMany(mappedBy = "user")
-//    private List<Playlist> playlists = new ArrayList<>();
 }
