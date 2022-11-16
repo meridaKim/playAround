@@ -1,11 +1,14 @@
 package com.example.model.entity;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
+@Getter @Setter
 @Data
 public class User {
     @Id
@@ -17,6 +20,21 @@ public class User {
     private String userName;
     private boolean localAgree;
     private String userEmail;
+    private Role role;
+
+    public User(String userId, String userPw, String userAge, String userName, boolean localAgree, String userEmail, Role role) {
+        this.userId=userId;
+        this.userPw=userPw;
+        this.userAge=userAge;
+        this.userName=userName;
+        this.localAgree=localAgree;
+        this.userEmail=userEmail;
+        this.role=role;
+    }
+
+    public User() {
+
+    }
     /*kakao,naver,google*/
 //    private String provider;
 //    @Builder
