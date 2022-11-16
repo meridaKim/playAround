@@ -1,21 +1,50 @@
 package com.example.controller;
 
-import com.example.model.entity.User;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
+import com.example.model.dto.MemberResponseDto;
+import com.example.service.MemberService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
+@RequestMapping("/api")
+@CrossOrigin(origins = "*")
+@RequiredArgsConstructor
 public class LoginController {
 
-    @PostMapping(value="login")
-    @ResponseBody
-    public String androidResponse(@RequestBody User user){
+    private final MemberService memberService;
 
-        System.out.println("CONNECT ANDROID");
-        System.out.println("id: "+user.getUserId() + ", pw: " + user.getUserPw());
+//    @GetMapping("/")
+//    public String firstform() {
+//        return "first";
+//    }
 
-        return "1";
+//    @GetMapping(value = {"/login","/login.html"})
+//    public String loginform() {
+//        return "login";
+//    }
+
+//    @PostMapping("/api/login")
+//    public String loginAction(@ModelAttribute Users users) {
+//        if(memberService.login(users)){
+//            return "redirect:/";
+//        }
+//        return "main";
+//    }
+
+//    @PostMapping("/login")
+//    public String loginAction(@ModelAttribute User users) {
+//        if(memberService.login(users)){
+//            return "redirect:/";
+//        }
+//        return "main";
+//    }
+
+    @PostMapping("/login")
+    public MemberResponseDto login(@RequestBody final MemberResponseDto params){
+        MemberResponseDto entity = memberService.findBy(params);
+        return entity;
     }
+
+
+
 }

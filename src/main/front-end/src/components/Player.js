@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import {Link, Route, Switch} from 'react-router-dom';
 import PlayerDetail from "./PlayerDetail";
 import PlayerControls from "./PlayerControls";
 
@@ -46,78 +47,57 @@ function Player(props) {
             <div className="song-place-container">
                 <div className="header">
                     <div className="song-place">
-                        <img
-                            src="./logos/songplace.png"
-                        />
+                        <div className="song-place-logo">
+                            <img
+                                src="./logos/songplace.png"
+                            />
+                        </div>
+                        <div className="space">space</div>
                     </div>
-                    <div className="space">space</div>
-                    <div className="user">로그인</div>
+
+                    <Link to="/signin"><div className="user">로그인</div></Link>
                 </div>
                 <div className="location">
                     <div className="item">지금나는?</div>
                     <div className="item">우주를 헤매는 중</div>
                     <div className="item">현재 위치를 설정해보세요</div>
                     <div className="item">내 위치 탐색하기</div>
-
                 </div>
-                <div className="playlist">플레이리스트리스트 추천을 받으시려면 위치설정을 완료해주세요</div>
+                <div className="playlist">플레이리스트 추천을 받으시려면 <p>위치설정을 완료해주세요</p></div>
 
             </div>
 
             <div className="song-player-container">
-            <p>
-                <div className="text-anim">
-                   <img
-                       src="./logos/nowplaying.png"
-                   />
-                </div>
+
+                <div className="song-player">
+                    <div className="text-anim">
+                       <img
+                           src="./logos/nowplaying.png"
+                       />
+                    </div>
 
 
-            </p>
-            <div className="music-player">
-                <audio
-                    src={props.songs[props.currentSongIndex].src}
-                    ref={audioElement}
-                ></audio>
-                <PlayerDetail song={props.songs[props.currentSongIndex]} />
+                    <div className="music-player">
+                        <audio
+                            src={props.songs[props.currentSongIndex].src}
+                            ref={audioElement}
+                        ></audio>
+                        <PlayerDetail song={props.songs[props.currentSongIndex]} />
 
-                <PlayerControls
-                    isPlaying={isPlaying}
-                    setIsPlaying={setIsPlaying}
-                    SkipSong={SkipSong}
-                />
-
-                <div class="player__footer">
-                    <ul class="list list--footer">
-                        <li>
-                            <a href="#" class="list__link">
-                                <i class="fa fa-heart-o"></i>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#" class="list__link">
-                                <i class="fa fa-random"></i>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#" class="list__link">
-                                <i class="fa fa-undo"></i>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#" class="list__link">
-                                <i class="fa fa-ellipsis-h"></i>
-                            </a>
-                        </li>
-                    </ul>
+                        <PlayerControls
+                            isPlaying={isPlaying}
+                            setIsPlaying={setIsPlaying}
+                            SkipSong={SkipSong}
+                        />
+                    </div>
                 </div>
                 <div className="song-playlist">
+                    <div className="song-playlist-text">
+                        <div className="play-song">재생목록</div>
+                        <div className="save-song">저장목록</div>
+                    </div>
+                    <div className="song-playlist-content"></div>
                 </div>
-                {/* <h4>Lofi Music Player React </h4> */}
-            </div>
             </div>
             </div>
         </>
