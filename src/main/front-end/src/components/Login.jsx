@@ -100,68 +100,61 @@ const Footer = styled.footer`
 
 function Login(props){
 
-    const [inputId, setInputId] = useState('')
-    const [inputPw, setInputPw] = useState('')
-    //상태변수 초기화
-    const handleInputId = (e) => {
-        setInputId(e.target.value);
-    };
-    const handleInputPw = (e) =>{
-        setInputPw(e.target.value)
-    };
 
+
+    const [id, setInputId] = useState('')
+    const [check,setCheck] = useState('')
+    const [inputPw, setInputPw] = useState('')
 
 
 //login 버튼 클릭
-    const onSubmit = async () => {
-        console.log("click login");
-        console.log("ID :", inputId);
-        console.log("PW :", inputPw);
-
-        const {data} = await axios.post("http://localhost:8080/api/login", {
-
-            data: {UserId: inputId},
-            headers: { 'Access-Control-Allow-Origin' : '*',
-                'Access-Control-Allow-Credentials': true,
-                'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,OPTIONS',
-                'Access-Control-Allow-Headers' :   'Content-Type, Authorization, Content-Length, X-Requested-With'},
-        }).then(r => {
-            console.log(r);
-            console.log("r.data.userId :: ", r.data.userId);
-            console.log("r.data.msg ", r.data.msg);
-            if (r.data.userId === undefined) {
-                console.log("======================", r.data.msg);
-                alert("입력하신 id 가 일치하지 않습니다.");
-            } else if (r.data.userId === null) {
-                // id는 있지만, pw 는 다른 경우 userId = null , msg = undefined
-                console.log(
-                    "======================",
-                    "입력하신 비밀번호 가 일치하지 않습니다."
-                );
-                alert("입력하신 비밀번호 가 일치하지 않습니다.");
-            } else if (r.data.email === inputId) {
-                // id, pw 모두 일치 userId = userId1, msg = undefined
-                console.log("======================", "로그인 성공");
-                // sessionStorage.setItem("user_id", inputId); // sessionStorage에 id를 user_id라는 key 값으로 저장
-                // sessionStorage.setItem("name", r.data.name); // sessionStorage에 id를 user_id라는 key 값으로 저장
-            }
-        });
-        console.log(data);
-
-
-    };
+//     const onSubmit = (e) => {
+//         console.log("click login");
+//         console.log("ID :", inputId);
+//         console.log("PW :", inputPw);
+//
+//         e.preventDefault();
+//
+//         const formData = new FormData(e.target);
+//
+//         axios.post("/api/login", {
+//             method: "POST",
+//             headers: {
+//                 Accept: "application/json",
+//                 "Content-Type": "application/json",
+//             },
+//             body: JSON.stringify({
+//                 email: formData.get('email'),
+//                 password: formData.get('password'),
+//             }),
+//         }) .then((r) => r.json())
+//             .then((data) =>{
+//                 console.log(data);
+//             })
+//             .catch((err) => err);
+//         }
 
     return (
-
         <Container>
             <GlobalStyle />
             <LoginForm>
                 <LoginName>로그인</LoginName>
                 <P>ID</P>
-                <Input id="id" name="id" type="p" placeholder="" value={inputId} onChange={handleInputId}/>
+                <Input onChange={(e)=>{setInputId(e.target.value);}}/>
                 <P>PASSWORD</P>
-                <Input id="password" name="password" type="password" placeholder="" value={inputPw} onChange={handleInputPw}/>
-                <Button onClick={onSubmit}><img src="./logos/login_button.png" /></Button>
+                <Input onChange={(e)=>{setInputPw(e.target.value);}}/>
+                <Button onClick={
+                    ()=>{
+                    axios.get('/api/login',{
+                        params:{
+                            id:id
+                        }
+                    }).then((res)=>{
+                        console.log(res);
+                        sessionStorage.setItem("name",res.data);
+                    })
+                    window.location.href = "/";
+                }}><img src="./logos/login_button.png" /></Button>
                 <Signup><SignupText>아이디가 없으신가요?</ SignupText><SignupText><Link to="/signup">회원가입</Link></SignupText></Signup>
             </LoginForm>
             <Footer>

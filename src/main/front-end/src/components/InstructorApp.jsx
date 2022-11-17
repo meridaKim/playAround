@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ListPlaylistComponent from './ListPlaylistComponent';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Login from "./Login";
+import Signup from "./Signup";
 
 
 class InstructorApp extends Component {
@@ -13,11 +14,12 @@ class InstructorApp extends Component {
                 <>
 
                         <Route exact path="/signup">
-                            <div>회원가입페이지</div>
+                            <Signup />
                         </Route>
                         <Route exact path="/signin">
                             <Login />
                         </Route>
+
 
                 </>
             </Router>

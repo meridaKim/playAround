@@ -2,16 +2,36 @@ import React, { useState, useRef, useEffect } from "react";
 import {Link, Route, Switch} from 'react-router-dom';
 import PlayerDetail from "./PlayerDetail";
 import PlayerControls from "./PlayerControls";
+import styled from "styled-components";
+import ListPlaylistComponent from "./ListPlaylistComponent";
+
+
+const Button = styled.button`
+    background-color:transparent;
+    border-color:transparent;
+`;
 
 function Player(props) {
     const audioElement = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
+    const [isLogin, setIsLogin] = useState(false); //로그인 관리
+    const [ShowPlayList,setShowPlayList] = useState(false);
 
     useEffect(() => {
         if (isPlaying) {
             audioElement.current.play();
         } else {
             audioElement.current.pause();
+        }
+
+        if (sessionStorage.getItem("name") === null) {
+            // sessionStorage 에 name 라는 key 값으로 저장된 값이 없다면
+            console.log("isLogin ?? :: ", isLogin);
+        } else {
+            // sessionStorage 에 name 라는 key 값으로 저장된 값이 있다면
+            // 로그인 상태 변경
+            setIsLogin(true);
+            console.log("isLogin ?? :: ", isLogin);
         }
     });
 
@@ -41,6 +61,10 @@ function Player(props) {
         }
     };
 
+    const onClickShowPlayList = ()=>{
+        setShowPlayList(true)
+    }
+
     return (
         <>
             <div className="container">
@@ -55,7 +79,23 @@ function Player(props) {
                         <div className="space">space</div>
                     </div>
 
-                    <Link to="/signin"><div className="user">로그인</div></Link>
+                    {isLogin ? (
+                        <Link to={`/Mypage`} className="user">{sessionStorage.getItem("name")}님</Link>
+                    )
+                        :(<Link to="/signin"><div className="user">로그인</div></Link>
+                        )
+                    }
+                    {isLogin ?
+                            <Button onClick={()=>{
+                                setIsLogin(false);
+                                console.log("isLogin ?? :: ", isLogin);
+                                sessionStorage.removeItem("name");
+                            }
+                            }>로그아웃 </Button>
+
+                        :   <Link to="/signup"><div className="user">회원가입</div></Link>
+
+                    }
                 </div>
                 <div className="location">
                     <div className="item">지금나는?</div>
@@ -63,7 +103,10 @@ function Player(props) {
                     <div className="item">현재 위치를 설정해보세요</div>
                     <div className="item">내 위치 탐색하기</div>
                 </div>
-                <div className="playlist">플레이리스트 추천을 받으시려면 <p>위치설정을 완료해주세요</p></div>
+                {isLogin ?
+                    <ListPlaylistComponent />
+                    :<div className="playlist">플레이리스트 추천을 받으시려면 <p>위치설정을 완료해주세요</p></div>
+                }
 
             </div>
 
@@ -88,12 +131,13 @@ function Player(props) {
                             isPlaying={isPlaying}
                             setIsPlaying={setIsPlaying}
                             SkipSong={SkipSong}
+                            setShowPlayList={setShowPlayList}
                         />
                     </div>
                 </div>
                 <div className="song-playlist">
                     <div className="song-playlist-text">
-                        <div className="play-song">재생목록</div>
+                        <div className="play-song" onClick={onClickShowPlayList} >재생목록</div>
                         <div className="save-song">저장목록</div>
                     </div>
                     <div className="song-playlist-content"></div>

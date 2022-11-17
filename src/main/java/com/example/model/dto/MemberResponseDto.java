@@ -17,10 +17,10 @@ public class MemberResponseDto {
     public MemberResponseDto(User user){
         this.userId = user.getUserId();
         this.userPw = user.getUserPw();
-        this.userAge = user.getUserAge();
-        this.userEmail = user.getUserEmail();
-        this.userName = user.getUserName();
-        this.userEmail = user.getUserEmail();
+//        this.userAge = user.getUserAge();
+//        this.userEmail = user.getUserEmail();
+//        this.userName = user.getUserName();
+//        this.userEmail = user.getUserEmail();
 
     }
 

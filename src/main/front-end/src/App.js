@@ -6,7 +6,6 @@ import './Player.css';
 import Player from "./components/Player";
 import Login from "./components/Login";
 import InstructorApp from "./components/InstructorApp";
-import Map from "./components/Map";
 
 function App() {
 
@@ -17,6 +16,7 @@ function App() {
             "musicName": "-",
             "genre": "발라드",
             "singerName": "-",
+            "vibe":"등하교",
             "countUp": 0,
             "countDown": 0,
             "img_src": "./logos/player_image.png",
@@ -27,6 +27,7 @@ function App() {
             "musicName": "별의 언어",
             "genre": "발라드",
             "singerName": "뉴이스트",
+            "vibe":"등하교",
             "countUp": 0,
             "countDown": 0,
             "img_src": "./logos/player_image.png",
@@ -37,6 +38,7 @@ function App() {
             "musicName": "황혼의 새",
             "genre": "발라드",
             "singerName": "AOT",
+            "vibe":"등하교",
             "countUp": 0,
             "countDown": 0,
             "img_src": "./logos/player_image.png",
@@ -47,6 +49,7 @@ function App() {
             "musicName": "후유증",
             "genre": "발라드",
             "singerName": "뉴이스트",
+            "vibe":"등하교",
             "countUp": 0,
             "countDown": 0,
             "img_src": "./logos/player_image.png",
@@ -57,6 +60,7 @@ function App() {
             "musicName": "VOYAGER",
             "genre": "시티팝",
             "singerName": "SHIN EVA",
+            "vibe":"등하교",
             "countUp": 0,
             "countDown": 0,
             "img_src": "./logos/player_image.png",
@@ -85,6 +89,8 @@ function App() {
             }
         });
 
+
+
     },[currentSongIndex]);
 
     return (
@@ -99,7 +105,7 @@ function App() {
 
                 </Route>
                 <Route exact path="/signup">
-                    <div>회원가입페이지</div>
+                    <Signup />
                 </Route>
                 <Route exact path="/signin">
                     <Login />
