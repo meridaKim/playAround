@@ -17,9 +17,9 @@ import com.example.model.entity.User;
 @Controller
 public class LoginController {
 
-    @GetMapping("/login")
-    public String login(){
-        return "/WEB-INF/jsp/login.jsp";
+//    @GetMapping("/login")
+//    public String login(){
+//        return "/WEB-INF/jsp/login.jsp";
 
     @Autowired
     UserRepository userRepository;
@@ -40,4 +40,4 @@ public class LoginController {
 
 
 }
-}
+
