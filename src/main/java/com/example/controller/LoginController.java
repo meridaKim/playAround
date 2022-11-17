@@ -1,11 +1,14 @@
 package com.example.controller;
 
 import com.example.model.dto.MemberResponseDto;
+import com.example.repository.UserRepository;
 import com.example.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import com.example.model.entity.User;
+
 
 @RestController
 @RequestMapping("/api")
@@ -36,4 +39,5 @@ public class LoginController {
 
 
 
+}
 }
