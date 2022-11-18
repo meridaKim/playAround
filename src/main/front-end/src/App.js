@@ -5,8 +5,7 @@ import {useState, useEffect} from 'react';
 import './Player.css';
 import Player from "./components/Player";
 import Login from "./components/Login";
-import Signup from "./components/Signup";
-
+import InstructorApp from "./components/InstructorApp";
 
 function App() {
 
@@ -17,7 +16,6 @@ function App() {
             "musicName": "-",
             "genre": "발라드",
             "singerName": "-",
-            "vibe":"등하교",
             "countUp": 0,
             "countDown": 0,
             "img_src": "./logos/player_image.png",
@@ -28,7 +26,6 @@ function App() {
             "musicName": "별의 언어",
             "genre": "발라드",
             "singerName": "뉴이스트",
-            "vibe":"등하교",
             "countUp": 0,
             "countDown": 0,
             "img_src": "./logos/player_image.png",
@@ -39,7 +36,6 @@ function App() {
             "musicName": "황혼의 새",
             "genre": "발라드",
             "singerName": "AOT",
-            "vibe":"등하교",
             "countUp": 0,
             "countDown": 0,
             "img_src": "./logos/player_image.png",
@@ -50,7 +46,6 @@ function App() {
             "musicName": "후유증",
             "genre": "발라드",
             "singerName": "뉴이스트",
-            "vibe":"등하교",
             "countUp": 0,
             "countDown": 0,
             "img_src": "./logos/player_image.png",
@@ -61,7 +56,6 @@ function App() {
             "musicName": "VOYAGER",
             "genre": "시티팝",
             "singerName": "SHIN EVA",
-            "vibe":"등하교",
             "countUp": 0,
             "countDown": 0,
             "img_src": "./logos/player_image.png",
@@ -71,7 +65,6 @@ function App() {
 
     const [currentSongIndex, setCurrentSongIndex] = useState(0);
     const [nextSongIndex, setNextSongIndex] = useState(currentSongIndex + 1);
-    const [user,setUser]=useState([]);
     const [hello, setHello] = useState('')
 
 
@@ -97,21 +90,20 @@ function App() {
     return (
 
         <div className="App">
-                <Route exact path="/">
-                            백엔드에서 가져온 데이터입니다 : {hello}
-                            <Player currentSongIndex={currentSongIndex}
-                                    setCurrentSongIndex={setCurrentSongIndex}
-                                    nextSongIndex={nextSongIndex}
-                                    songs={songs} />
+            <Route exact path="/">
+                백엔드에서 가져온 데이터입니다 : {hello}
+                <Player currentSongIndex={currentSongIndex}
+                        setCurrentSongIndex={setCurrentSongIndex}
+                        nextSongIndex={nextSongIndex}
+                        songs={songs} />
 
-                </Route>
-                <Route exact path="/signup">
-                    <Signup />
-                </Route>
-                <Route exact path="/signin">
-                    <Login />
-                </Route>
-
+            </Route>
+            <Route exact path="/signup">
+                <div>회원가입페이지</div>
+            </Route>
+            <Route exact path="/signin">
+                <Login />
+            </Route>
         </div>
 
     );

@@ -3,7 +3,6 @@ import {Link, Route, Switch} from 'react-router-dom';
 import PlayerDetail from "./PlayerDetail";
 import PlayerControls from "./PlayerControls";
 import styled from "styled-components";
-import ListPlaylistComponent from "./ListPlaylistComponent";
 
 
 const Button = styled.button`
@@ -15,7 +14,6 @@ function Player(props) {
     const audioElement = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
     const [isLogin, setIsLogin] = useState(false); //로그인 관리
-    const [ShowPlayList,setShowPlayList] = useState(false);
 
     useEffect(() => {
         if (isPlaying) {
@@ -61,9 +59,6 @@ function Player(props) {
         }
     };
 
-    const onClickShowPlayList = ()=>{
-        setShowPlayList(true)
-    }
 
     return (
         <>
@@ -103,16 +98,11 @@ function Player(props) {
                     <div className="item">현재 위치를 설정해보세요</div>
                     <div className="item">내 위치 탐색하기</div>
                 </div>
-                {isLogin ?
-                    <ListPlaylistComponent />
-                    :<div className="playlist">플레이리스트 추천을 받으시려면 <p>위치설정을 완료해주세요</p></div>
-                }
-
             </div>
 
             <div className="song-player-container">
-
                 <div className="song-player">
+
                     <div className="text-anim">
                        <img
                            src="./logos/nowplaying.png"
@@ -131,17 +121,18 @@ function Player(props) {
                             isPlaying={isPlaying}
                             setIsPlaying={setIsPlaying}
                             SkipSong={SkipSong}
-                            setShowPlayList={setShowPlayList}
                         />
                     </div>
                 </div>
+
                 <div className="song-playlist">
                     <div className="song-playlist-text">
-                        <div className="play-song" onClick={onClickShowPlayList} >재생목록</div>
+                        <div className="play-song">재생목록</div>
                         <div className="save-song">저장목록</div>
                     </div>
                     <div className="song-playlist-content"></div>
                 </div>
+
             </div>
             </div>
         </>
