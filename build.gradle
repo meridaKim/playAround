@@ -22,8 +22,18 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-tomcat'
     annotationProcessor 'org.projectlombok:lombok'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    //MyBatis 추가
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
+    // https://mvnrepository.com/artifact/javax.servlet/jstl
+    implementation group: 'javax.servlet', name: 'jstl', version: '1.2'
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+    implementation 'javax.servlet:jstl'
+
+
+
     runtimeOnly 'mysql:mysql-connector-java'
     //implementation 'android.arch.persistence.room:runtime:1.1.1'
     //annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
@@ -52,47 +62,6 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 
-//react build
-def frontendDir = "$projectDir/src/main/frontend"
-
-sourceSets {
-    main {
-        resources { srcDirs = ["$projectDir/src/main/resources"]
-        }
-    }
-}
-
-processResources { dependsOn "copyReactBuildFiles" }
-
-task installReact(type: Exec) {
-    workingDir "$frontendDir"
-    inputs.dir "$frontendDir"
-    group = BasePlugin.BUILD_GROUP
-    if (System.getProperty('os.name').toLowerCase(Locale.ROOT).contains('windows')) {
-        commandLine "npm.cmd", "audit", "fix"
-        commandLine 'npm.cmd', 'install' }
-    else {
-        commandLine "npm", "audit", "fix" commandLine 'npm', 'install'
-    }
-}
-
-task buildReact(type: Exec) {
-    dependsOn "installReact"
-    workingDir "$frontendDir"
-    inputs.dir "$frontendDir"
-    group = BasePlugin.BUILD_GROUP
-    if (System.getProperty('os.name').toLowerCase(Locale.ROOT).contains('windows')) {
-        commandLine "npm.cmd", "run-script", "build"
-    } else {
-        commandLine "npm", "run-script", "build"
-    }
-}
-
-task copyReactBuildFiles(type: Copy) {
-    dependsOn "buildReact"
-    from "$frontendDir/build"
-    into "$projectDir/src/main/resources/static"
-}
 /*tasks.named('bootBuildImage') {
     builder = 'paketobuildpacks/builder:tiny'
     environment = ['BP_NATIVE_IMAGE': 'true']

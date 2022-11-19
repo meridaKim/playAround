@@ -10,24 +10,24 @@ import java.util.List;
 @Entity
 @Getter@Setter
 public class User {
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="user_id",length = 100)
-    private String userId;
+    @Column(name="user_no")
+    private String userNo;
+
+    @Column(name="user_pw")
     private String userPw;
-//    private String userName;
-//    private int localAgree;
 
-    public User(){}
+    @OneToOne(mappedBy = "user")
+    private Location location;
 
-    public User(String userId, String userPassword){
-        this.userId = userId;
-        this.userPw = userPw;
-    }
+    private String userName;
+    private String userGender;
+    private String userEmail;
+
 
 
     @OneToMany(mappedBy = "user")
     private List<Playlist> playlists = new ArrayList<>();
+
 }

@@ -1,21 +1,13 @@
 package com.example.controller;
 
-import com.example.model.entity.User;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class LoginController {
 
-    @PostMapping(value="login")
-    @ResponseBody
-    public String androidResponse(@RequestBody User user){
-
-        System.out.println("CONNECT ANDROID");
-        System.out.println("id: "+user.getUserId() + ", pw: " + user.getUserPw());
-
-        return "1";
+    @GetMapping("/login")
+    public String login(){
+        return "/WEB-INF/jsp/login.jsp";
     }
 }
