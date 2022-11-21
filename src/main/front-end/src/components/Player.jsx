@@ -4,11 +4,22 @@ import PlayerDetail from "./PlayerDetail";
 import PlayerControls from "./PlayerControls";
 import styled from "styled-components";
 
-
 const Button = styled.button`
     background-color:transparent;
     border-color:transparent;
 `;
+
+function Song({song}){
+    return(
+        <div className="songs">
+            <img
+                className="playlist-img--image"
+                src={song.cover_src}
+                alt=""
+            /> {song.musicName}
+        </div>
+    );
+}
 
 function Player(props) {
     const audioElement = useRef(null);
@@ -32,6 +43,7 @@ function Player(props) {
             console.log("isLogin ?? :: ", isLogin);
         }
     });
+
 
     const SkipSong = (forwards = true) => {
         if (forwards) {
@@ -98,7 +110,13 @@ function Player(props) {
                     <div className="item">현재 위치를 설정해보세요</div>
                     <div className="item">내 위치 탐색하기</div>
                 </div>
+                <div className="playlist-item">
+                    {props.songs.map(song =>(
+                        <Song song={song} />
+                    ))}
+                </div>
             </div>
+
 
             <div className="song-player-container">
                 <div className="song-player">
@@ -108,8 +126,6 @@ function Player(props) {
                            src="./logos/nowplaying.png"
                        />
                     </div>
-
-
                     <div className="music-player">
                         <audio
                             src={props.songs[props.currentSongIndex].src}

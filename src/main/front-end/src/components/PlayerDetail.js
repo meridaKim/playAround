@@ -1,6 +1,8 @@
 import React from "react";
 
 function PlayerDetail(props) {
+
+
     return (
         <div className="music-player--details">
             <div className="details-img">

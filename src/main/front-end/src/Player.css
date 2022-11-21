@@ -37,7 +37,7 @@ body {
 }
 .song-place-container{
     display: grid;
-    grid-template-rows: 122px 395px 516px;
+    grid-template-rows: 122px 395px 816px;
     /*margin-left:200px;*/
     border-right: 1.30114px solid #474747;
     border-left: 1.30114px solid #474747;
@@ -154,6 +154,39 @@ body {
     padding:15px;
 
     color: #EFEFEF;
+}
+
+.playlist-item{
+    margin-top:96px;
+
+    display:grid;
+    grid-template-columns: 500px 500px;
+
+}
+.songs{
+    display:grid;
+    padding-left:44px;
+    padding-right:44px;
+    padding-bottom: 28px;
+    grid-auto-flow: column;
+    grid-template-columns:100px 100px;
+
+}
+
+.playlist-item img{
+    width:100px;
+    padding-right: 16px;
+
+}
+
+.playlist-item{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 23px;
+
+    color: #474747;
 }
 
 .playlist{
