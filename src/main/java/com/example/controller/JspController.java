@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class JspController {
     private static final Logger logger = LoggerFactory.getLogger(JspController.class);
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String login(Locale locale, Model model) {
-        logger.info("method [" + Thread.currentThread().getStackTrace()[1].getMethodName() + "]");	// 로그에 메소드명 나타내기x
-        return "login";
-    }
+//    @RequestMapping(value = "/", method = RequestMethod.GET)
+//    public String login(Locale locale, Model model) {
+//        logger.info("method [" + Thread.currentThread().getStackTrace()[1].getMethodName() + "]");	// 로그에 메소드명 나타내기x
+//        return "login";
+//    }
 
     @RequestMapping(value = "/MainPage", method = RequestMethod.GET)
     public String Main(Locale locale, Model model) {
@@ -30,10 +30,10 @@ public class JspController {
         logger.info("method [" + Thread.currentThread().getStackTrace()[1].getMethodName() + "]");	// 로그에 메소드명 나타내기x
         return "LocationMarkerCluster";
     }
-    @RequestMapping(value = "loginAction.do")
-    public String loginAction(Locale locale, Model model) {
-        logger.info("method [" + Thread.currentThread().getStackTrace()[1].getMethodName() + "]");	// 로그에 메소드명 나타내기x
-        return "loginAction";
-    }
+//    @RequestMapping(value = "loginAction.do")
+//    public String loginAction(Locale locale, Model model) {
+//        logger.info("method [" + Thread.currentThread().getStackTrace()[1].getMethodName() + "]");	// 로그에 메소드명 나타내기x
+//        return "loginAction";
+//    }
 
 }
