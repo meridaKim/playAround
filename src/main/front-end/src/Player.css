@@ -32,12 +32,21 @@ body {
 /*grid*/
 .container {
     display:grid;
-    grid-template-columns: 1020px 495px;
+    grid-template-columns: 65px 1020px 495px;
 
+}
+.transform_arrow{
+    width:27px;
+    margin-top: 225px;
+
+
+}
+.transform_arrow img{
+    width:27px;
 }
 .song-place-container{
     display: grid;
-    grid-template-rows: 122px 395px 816px;
+    grid-template-rows: 122px 395px 20px 816px;
     /*margin-left:200px;*/
     border-right: 1.30114px solid #474747;
     border-left: 1.30114px solid #474747;
@@ -155,10 +164,62 @@ body {
 
     color: #EFEFEF;
 }
+.vibe_container{
+
+    width: 400px;
+    height:100px;
+    display: grid;
+    grid-auto-flow: column;
+
+
+    grid-template-rows: repeat(3, minmax(40px,auto));
+
+}
+.vibe{
+
+    grid-auto-flow: column;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+
+
+
+
+    width:90px;
+    height: 40px;
+
+
+    display: grid;
+
+    color: #9A9A9A;
+
+}
+
+.vibe:active{
+    background-color: aqua;
+}
+.vibe_name{
+    margin-top:35px;
+    width: 100px;
+    height: 29px;
+
+    margin-left: 38px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+
+
+    color: #474747;
+
+}
 
 .playlist-item{
-    margin-top:96px;
-
+    margin-top:70px;
     display:grid;
     grid-template-columns: 500px 500px;
 
