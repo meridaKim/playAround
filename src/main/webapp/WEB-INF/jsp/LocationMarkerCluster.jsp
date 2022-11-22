@@ -6,13 +6,256 @@
 <head>
     <meta charset="UTF-8">
     <title>Insert title here</title>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+        #line_first_row{
+            position: absolute;
+            width: 1063px;
+            height: 0px;
+            left: 200px;
+            top: 150px;
+
+            border: 1.30114px solid #474747;
+        }
+
+        #leftline{
+            position: absolute;
+            width: 1090px;
+            height: 600px;
+            left: 866px;
+            top: 230px;
+            border: 1.30114px
+            solid #474747;
+            transform: rotate(-90deg);
+        }
+
+        #player_img{
+            position: absolute;
+            width: 400px;
+            height: 280px;
+            left: 1090px;
+            top: 160px;
+
+        }
+
+        #map {
+            width: 80%;
+            height: 80%;
+        }
+        .mapSection{
+            position : center;
+            margin: auto !important;
+        }
+        /*.list {*/
+        /*    display: flex;*/
+        /*    justify-content: space-around;*/
+        /*    align-items: center;*/
+        /*    vertical-align: text-bottom;*/
+        /*}*/
+        /*button {*/
+        /*    width : 400px;*/
+        /*    font-size: 1em;*/
+        /*    vertical-align: text-bottom;*/
+        /*}*/
+        .playlistSection{
+             display: table; margin-left: auto; margin-right: auto;
+        }
+        .button-add {
+            width : 300px;
+            background-size: 50px 50px;
+            background-image: url("https://ifh.cc/g/mWBBwa.png"); /* 16px x 16px */
+            background-color: #dbdbdb; /* make the button transparent */
+            background-repeat: no-repeat;  /* make the background image appear only once */
+            background-position: 10px 15px;  /* equivalent to 'top left' */
+            border: none;           /* assuming we don't want any borders */
+            cursor: pointer;        /* make the cursor like hovering over an <a> element */
+            height: 80px;           /* make this the size of your image */
+            padding-left: 70px;     /* make text start to the right of the image */
+            vertical-align: middle; /* align the text vertically centered */
+            border-radius: 12px;
+        }
+
+        .button-add2 {
+            width : 300px;
+            background-size: 50px 50px;
+            background-image: url("https://ifh.cc/g/fbhd89.png"); /* 16px x 16px */
+            background-color: #dbdbdb; /* make the button transparent */
+            background-repeat: no-repeat;  /* make the background image appear only once */
+            background-position: 10px 15px;  /* equivalent to 'top left' */
+            border: none;           /* assuming we don't want any borders */
+            cursor: pointer;        /* make the cursor like hovering over an <a> element */
+            height: 80px;           /* make this the size of your image */
+            padding-left: 70px;     /* make text start to the right of the image */
+            vertical-align: middle; /* align the text vertically centered */
+            border-radius: 12px;
+        }
+
+        .button-add3 {
+            width : 300px;
+            background-size: 50px 50px;
+            background-image: url("https://ifh.cc/g/8WdaxN.png"); /* 16px x 16px */
+            background-color: #dbdbdb; /* make the button transparent */
+            background-repeat: no-repeat;  /* make the background image appear only once */
+            background-position: 10px 15px;  /* equivalent to 'top left' */
+            border: none;           /* assuming we don't want any borders */
+            cursor: pointer;        /* make the cursor like hovering over an <a> element */
+            height: 80px;           /* make this the size of your image */
+            padding-left: 70px;     /* make text start to the right of the image */
+            vertical-align: middle; /* align the text vertically centered */
+            border-radius: 12px;
+        }
+        .button-add4 {
+            width : 300px;
+            background-size: 50px 50px;
+            background-image: url("https://ifh.cc/g/v0fkTo.png"); /* 16px x 16px */
+            background-color: #dbdbdb; /* make the button transparent */
+            background-repeat: no-repeat;  /* make the background image appear only once */
+            background-position: 10px 15px;  /* equivalent to 'top left' */
+            border: none;           /* assuming we don't want any borders */
+            cursor: pointer;        /* make the cursor like hovering over an <a> element */
+            height: 80px;           /* make this the size of your image */
+            padding-left: 70px;     /* make text start to the right of the image */
+            vertical-align: middle; /* align the text vertically centered */
+            border-radius: 12px;
+        }
+        .button-add5 {
+            width : 300px;
+            background-size: 50px 50px;
+            background-image: url("https://ifh.cc/g/BXAVBz.png"); /* 16px x 16px */
+            background-color: #dbdbdb; /* make the button transparent */
+            background-repeat: no-repeat;  /* make the background image appear only once */
+            background-position: 10px 15px;  /* equivalent to 'top left' */
+            border: none;           /* assuming we don't want any borders */
+            cursor: pointer;        /* make the cursor like hovering over an <a> element */
+            height: 80px;           /* make this the size of your image */
+            padding-left: 70px;     /* make text start to the right of the image */
+            vertical-align: middle; /* align the text vertically centered */
+            border-radius: 12px;
+        }
+        .button-add6 {
+            width : 300px;
+            background-size: 50px 50px;
+            background-image: url("https://ifh.cc/g/fZlJXh.png"); /* 16px x 16px */
+            background-color: #dbdbdb; /* make the button transparent */
+            background-repeat: no-repeat;  /* make the background image appear only once */
+            background-position: 10px 15px;  /* equivalent to 'top left' */
+            border: none;           /* assuming we don't want any borders */
+            cursor: pointer;        /* make the cursor like hovering over an <a> element */
+            height: 80px;           /* make this the size of your image */
+            padding-left: 70px;     /* make text start to the right of the image */
+            vertical-align: middle; /* align the text vertically centered */
+            border-radius: 12px;
+        }
+        .button-add7 {
+            width : 300px;
+            background-size: 50px 50px;
+            background-image: url("https://ifh.cc/g/v0fkTo.png"); /* 16px x 16px */
+            background-color: #dbdbdb; /* make the button transparent */
+            background-repeat: no-repeat;  /* make the background image appear only once */
+            background-position: 10px 15px;  /* equivalent to 'top left' */
+            border: none;           /* assuming we don't want any borders */
+            cursor: pointer;        /* make the cursor like hovering over an <a> element */
+            height: 80px;           /* make this the size of your image */
+            padding-left: 70px;     /* make text start to the right of the image */
+            vertical-align: middle; /* align the text vertically centered */
+            border-radius: 12px;
+        }
+        .button-add8 {
+            width : 300px;
+            background-size: 50px 50px;
+            background-image: url("https://ifh.cc/g/cQ3nqS.png"); /* 16px x 16px */
+            background-color: #dbdbdb; /* make the button transparent */
+            background-repeat: no-repeat;  /* make the background image appear only once */
+            background-position: 10px 15px;  /* equivalent to 'top left' */
+            border: none;           /* assuming we don't want any borders */
+            cursor: pointer;        /* make the cursor like hovering over an <a> element */
+            height: 80px;           /* make this the size of your image */
+            padding-left: 70px;     /* make text start to the right of the image */
+            vertical-align: middle; /* align the text vertically centered */
+            border-radius: 12px;
+        }
+        .button-add9 {
+            width : 300px;
+            background-size: 50px 50px;
+            background-image: url("https://ifh.cc/g/5QwtgS.png"); /* 16px x 16px */
+            background-color: #dbdbdb; /* make the button transparent */
+            background-repeat: no-repeat;  /* make the background image appear only once */
+            background-position: 10px 15px;  /* equivalent to 'top left' */
+            border: none;           /* assuming we don't want any borders */
+            cursor: pointer;        /* make the cursor like hovering over an <a> element */
+            height: 80px;           /* make this the size of your image */
+            padding-left: 70px;     /* make text start to the right of the image */
+            vertical-align: middle; /* align the text vertically centered */
+            border-radius: 12px;
+        }
+
+        .menulist {
+            list-style-type: none;
+            margin-left : 100px;
+            margin-top:30px;
+            /*padding :10px 10px;*/
+            overflow: hidden;
+        }
+
+        #logoMList{
+            margin-left : 50px;
+            display: grid;
+            /*grid-template-columns: 600px 1fr;*/
+            text-align: center;
+        }
+
+        #list li{
+            float: left;
+            font-size: 15px;
+            padding :10px 10px;
+            vertical-align: text-bottom;
+        }
+
+        #list a{
+            float: right;
+            margin-right : 520px;
+            display: block;
+            color:black;
+            text-align: center;
+            padding : 14px 30px;
+            text-decoration: none;
+            font-size: 25px;
+        }
+
+    </style>
 </head>
 <body>
-<br><br><br><br>
+<div id="logoMList">
+
+    <div>
+        <ul class="menulist">
+            <div id="list">
+                <li><div><img src="https://ifh.cc/g/dPw8wb.png" height="30px"></div></li>
+                <li></li>
+                <li><div><img src="https://ifh.cc/g/nTFWDF.png" height="25px"></div></li>
+                <a href="#">로그인</a>
+            </div>
+
+        </ul>
+    </div>
+</div>
+<div id="line_first_row"></div>
+<div id="player">
+    <img id="player_img" src="https://ifh.cc/g/A4dMO7.png" width="300px" height="300px">
+</div>
+<%--<div id="play_button">--%>
+<%--    <img id="player_button" src="https://ifh.cc/g/COOJwH.png">--%>
+<%--</div>--%>
+<div id="leftline"></div>
+<br>
 <div id="map" style="width:100%;height:350px;"></div>
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <!-- API Key 입력 필요 -->
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3df00acbc8d0180df86d322835eaee2c&libraries=clusterer"></script>
+<div style="margin:0 auto; text-align:center">
 <script>
 
     $.ajax({
@@ -25,69 +268,17 @@
                     ), // 지도의 중심좌표
                 level : 2 // 지도의 확대 레벨
             };
-
+            mapContainer.style.width = '950px';
+            mapContainer.style.height = '400px';
+            mapContainer.style.marginLeft = '150px';
 
             var map = new kakao.maps.Map(mapContainer, mapOption);
-
-            // var roundPosition = [
-            //     new kakao.maps.LatLng(37.54699, 127.09598),
-            //     new kakao.maps.LatLng(37.54670, 127.09600)
-            // ];
-            //
-            // var playGroundPositions = [
-            //     new kakao.maps.LatLng(37.499590490909185, 127.0263723554437),
-            //     new kakao.maps.LatLng(37.499427948430814, 127.02794423197847),
-            //     new kakao.maps.LatLng(37.498553760499505, 127.02882598822454),
-            //     new kakao.maps.LatLng(37.497625593121384, 127.02935713582038),
-            //     new kakao.maps.LatLng(37.49646391248451, 127.02675574250912),
-            //     new kakao.maps.LatLng(37.49629291770947, 127.02587362608637),
-            //     new kakao.maps.LatLng(37.49754540521486, 127.02546694890695)
-            // ];
 
             var imageSrc = "https://ifh.cc/g/CFnBGx.png", // 마커이미지의 주소입니다
                 imageSize = new kakao.maps.Size(34, 39), // 마커이미지의 크기입니다
                 imageOption = {offset: new kakao.maps.Point(7, 49)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
             var markerImageSrc = "https://ifh.cc/g/CFnBGx.png";  // 마커이미지의 주소입니다. 스프라이트 이미지 입니다
-            // playGroundMarkers=[];//
-            //
-            // createplayGroundMarkers();
 
-            // function createMarkerImage(src, size, options) {
-            //     var markerImage = new kakao.maps.MarkerImage(src, size, options);
-            //     return markerImage;
-            // }
-            // function createMarker(position, image) {
-            //     var marker = new kakao.maps.Marker({
-            //         position: position,
-            //         image: image
-            //     });
-            //
-            //     return marker;
-            // }
-            // function createplayGroundMarkers() {
-            //
-            //     for (var i = 0; i < playGroundPositions.length; i++) {
-            //
-            //         var imageSize = new kakao.maps.Size(22, 26),
-            //             imageOptions = {
-            //                 spriteOrigin: new kakao.maps.Point(10, 0),
-            //                 spriteSize: new kakao.maps.Size(36, 98)
-            //             };
-            //
-            //         // 마커이미지와 마커를 생성합니다
-            //         var markerImage = createMarkerImage(markerImageSrc, imageSize, imageOptions),
-            //             marker = createMarker(playGroundPositions[i], markerImage);
-            //
-            //         // 생성된 마커를 커피숍 마커 배열에 추가합니다
-            //         playGroundMarkers.push(marker);
-            //     }
-            // }
-            //
-            // function setCoffeeMarkers(map) {
-            //     for (var i = 0; i < coffeeMarkers.length; i++) {
-            //         playGroundMarkers[i].setMap(map);
-            //     }
-            // }
 //마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
             var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
 
@@ -97,7 +288,6 @@
             var markerPosition2 = new kakao.maps.LatLng(37.2095,127.0359);
             var markerPosition3 = new kakao.maps.LatLng(37.3007,127.0340);
             var markerPosition4 = new kakao.maps.LatLng(37.3017,127.0345);
-
 
             var marker = new kakao.maps.Marker({
                 position: roundPosition,
@@ -136,8 +326,19 @@
             marker4.setMap(map);
             marker5.setMap(map);
 
-            var iwContent = '<div style="padding:5px;">Hello World!</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+            //marker
+            var iwContent = '<div style="padding:5px;">중앙도서관 Round</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
                 iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
+            //marker1
+            var iwContent2 = '<div style="padding:5px;">종합강의동 Round</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+                iwRemoveable2 = true;
+            //marker2
+            var iwContent3 = '<div style="padding:5px;">운동장 Round</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+                iwRemoveable3 = true;
+            var iwContent4 = '<div style="padding:5px;">진리관 Round</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+                iwRemoveable4 = true;
+            var iwContent5 = '<div style="padding:5px;">경기탑 Round</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+                iwRemoveable5 = true;
 
 // 인포윈도우를 생성합니다
             var infowindow = new kakao.maps.InfoWindow({
@@ -145,10 +346,48 @@
                 removable : iwRemoveable
             });
 
+            var infowindow2 = new kakao.maps.InfoWindow({
+                content : iwContent2,
+                removable : iwRemoveable2
+            });
+
+            var infowindow3 = new kakao.maps.InfoWindow({
+                content : iwContent3,
+                removable : iwRemoveable3
+            });
+
+            var infowindow4 = new kakao.maps.InfoWindow({
+                content : iwContent4,
+                removable : iwRemoveable4
+            });
+
+            var infowindow5 = new kakao.maps.InfoWindow({
+                content : iwContent5,
+                removable : iwRemoveable5
+            });
+
 // 마커에 클릭이벤트를 등록합니다
             kakao.maps.event.addListener(marker, 'click', function() {
                 // 마커 위에 인포윈도우를 표시합니다
                 infowindow.open(map, marker);
+            });
+
+            kakao.maps.event.addListener(marker1, 'click', function() {
+                // 마커 위에 인포윈도우를 표시합니다
+                infowindow2.open(map, marker1);
+            });
+
+            kakao.maps.event.addListener(marker2, 'click', function() {
+                // 마커 위에 인포윈도우를 표시합니다
+                infowindow3.open(map, marker2);
+            });
+            kakao.maps.event.addListener(marker4, 'click', function() {
+                // 마커 위에 인포윈도우를 표시합니다
+                infowindow4.open(map, marker4);
+            });
+            kakao.maps.event.addListener(marker5, 'click', function() {
+                // 마커 위에 인포윈도우를 표시합니다
+                infowindow5.open(map, marker5);
             });
 
             // 마커 클러스터러를 생성합니다
@@ -177,5 +416,161 @@
         }
     })
 </script>
+<script type="text/javascript">
+    function dispList(selectList) {
+        var obj1 = document.getElementById("sc1_list"); // 상품1 리스트
+        var obj2 = document.getElementById("sc2_list"); // 상품2 리스트
+        var obj3 = document.getElementById("sc3_list"); // 상품2 리스트
+        var obj4 = document.getElementById("sc4_list"); // 상품2 리스트
+        var obj5 = document.getElementById("sc5_list"); // 상품2 리스트
+
+        if( selectList == "0" ) { // 상품1 리스트
+            obj1.style.display = "block";
+            obj2.style.display = "none";
+            obj3.style.display = "none";
+            obj4.style.display = "none";
+            obj5.style.display = "none";
+            alert(	obj.style.display ) ;
+        } else if (selectList == "1") { // 상품2 리스트
+            obj1.style.display = "none";
+            obj2.style.display = "block";
+            obj3.style.display = "none";
+            obj4.style.display = "none";
+            obj5.style.display = "none";
+        }else if (selectList == "2") { // 상품2 리스트
+            obj1.style.display = "none";
+            obj2.style.display = "none";
+            obj3.style.display = "block";
+            obj4.style.display = "none";
+            obj5.style.display = "none";
+        }else if (selectList == "3") { // 상품2 리스트
+        obj1.style.display = "none";
+        obj2.style.display = "none";
+        obj3.style.display = "none";
+        obj4.style.display = "block";
+        obj5.style.display = "none";
+        }else if (selectList == "4") { // 상품2 리스트
+            obj1.style.display = "none";
+            obj2.style.display = "none";
+            obj3.style.display = "none";
+            obj4.style.display = "none";
+            obj5.style.display = "block";
+        }
+    }
+</script>
+</div>
+<br/>
+<br/>
+<section class="playlistSection">
+<input type="radio" name="choose" id="sc1" onclick="dispList('0');"> 중앙도서관 Round
+<input type="radio" name="choose" id="sc2" onclick="dispList('1');"> 운동장 Round
+<input type="radio" name="choose" id="sc3" onclick="dispList('2');"> 종합강의동 Round
+<input type="radio" name="choose" id="sc4" onclick="dispList('3');"> 진리관 Round
+<input type="radio" name="choose" id="sc5" onclick="dispList('4');"> 경기탑 Round
+<p>
+<div class="list" id="sc1_list" style="display:none">
+    <button type="button" class="button-add">
+<%--        <img src="https://ifh.cc/g/mWBBwa.png" alt=""  height ="80" width="80">--%>
+        야작하면서 듣다 죽어도 모르는 음악들 <br>
+            19/20명 참여중
+    </button>
+    <br/><p></p>
+    <button type="button" class="button-add2">
+        <%--        <img src="https://ifh.cc/g/mWBBwa.png" alt=""  height ="80" width="80">--%>
+            화가날 땐 이 음악들을 들어봐요 <br>
+        20/20명 참여중
+    </button>
+    <br/><p></p>
+    <button type="button" class="button-add3">
+        <%--        <img src="https://ifh.cc/g/mWBBwa.png" alt=""  height ="80" width="80">--%>
+            집에 가고 싶을 때 듣는 플레이리스트 <br>
+        10/15명 참여중
+    </button>
+    <br/>
+</div>
+
+<div id="sc2_list" style="display:none">
+    <button type="button" class="button-add4">
+        <%--        <img src="https://ifh.cc/g/mWBBwa.png" alt=""  height ="80" width="80">--%>
+            교수님이 미울 때 듣는 음악 <br>
+        19/20명 참여중
+    </button>
+    <br/><p></p>
+    <button type="button" class="button-add5">
+        <%--        <img src="https://ifh.cc/g/mWBBwa.png" alt=""  height ="80" width="80">--%>
+            미사모 : 미노이 사랑해 모음집 <br>
+            20/20명 참여중
+    </button>
+    <br/><p></p>
+    <button type="button" class="button-add6">
+        <%--        <img src="https://ifh.cc/g/mWBBwa.png" alt=""  height ="80" width="80">--%>
+            노동요 모음집 <br>
+            4/20명 참여중
+    </button>
+    <br/>
+</div>
+<div id="sc3_list" style="display:none">
+    <button type="button" class="button-add7">
+        <%--        <img src="https://ifh.cc/g/mWBBwa.png" alt=""  height ="80" width="80">--%>
+            교수님이 미울 때 듣는 음악2 <br>
+            10/15명 참여중
+    </button>
+    <br/><p></p>
+    <button type="button" class="button-add8">
+        <%--        <img src="https://ifh.cc/g/mWBBwa.png" alt=""  height ="80" width="80">--%>
+            교수님 죄송합니다 <br>
+        19/20명 참여중
+    </button>
+    <br/><p></p>
+    <button type="button" class="button-add">
+        <%--        <img src="https://ifh.cc/g/mWBBwa.png" alt=""  height ="80" width="80">--%>
+        야작하면서 듣다 죽어도 모르는 음악들 <br>
+        19/20명 참여중
+    </button>
+    <br/>
+</div>
+<div id="sc4_list" style="display:none">
+    <button type="button" class="button-add9">
+        <%--        <img src="https://ifh.cc/g/mWBBwa.png" alt=""  height ="80" width="80">--%>
+        야작하면서 듣다 죽어도 모르는 음악들 <br>
+        19/20명 참여중
+    </button>
+    <br/><p></p>
+    <button type="button" class="button-add3">
+        <%--        <img src="https://ifh.cc/g/mWBBwa.png" alt=""  height ="80" width="80">--%>
+        집에 가고 싶을 때 듣는 플레이리스트 <br>
+        10/15명 참여중
+    </button>
+    <br/><p></p>
+    <button type="button" class="button-add4">
+        <%--        <img src="https://ifh.cc/g/mWBBwa.png" alt=""  height ="80" width="80">--%>
+        교수님이 미울 때 듣는 음악 <br>
+        19/20명 참여중
+    </button>
+    <br/>
+</div>
+<div id="sc5_list" style="display:none">
+    <button type="button" class="button-add2">
+        <%--        <img src="https://ifh.cc/g/mWBBwa.png" alt=""  height ="80" width="80">--%>
+        화가날 땐 이 음악들을 들어봐요 <br>
+        20/20명 참여중
+    </button>
+    <br/><p></p>
+    <button type="button" class="button-add6">
+        <%--        <img src="https://ifh.cc/g/mWBBwa.png" alt=""  height ="80" width="80">--%>
+        노동요 모음집 <br>
+        4/20명 참여중
+    </button>
+    <br/><p></p>
+    <button type="button" class="button-add8">
+        <%--        <img src="https://ifh.cc/g/mWBBwa.png" alt=""  height ="80" width="80">--%>
+        교수님 죄송합니다 <br>
+        19/20명 참여중
+    </button>
+    <br/>
+</div>
+</section>
+<br>
+
 </body>
 </html>
