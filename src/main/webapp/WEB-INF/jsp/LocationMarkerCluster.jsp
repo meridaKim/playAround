@@ -286,6 +286,29 @@
             text-decoration: none;
             font-size: 25px;
         }
+        .box-radio-input input[type="radio"]{
+            display:none;
+        }
+
+        .box-radio-input input[type="radio"] + span{
+            display:inline-block;
+            background:none;
+            border:1px solid #dfdfdf;
+            padding:0px 10px;
+            text-align:center;
+            height:35px;
+            line-height:33px;
+            font-weight:500;
+            cursor:pointer;
+        }
+
+        .box-radio-input input[type="radio"]:checked + span{
+            border:1px solid #23a3a7;
+            background:#02457A;
+            color:#fff;
+        }
+
+
 
     </style>
 </head>
@@ -338,7 +361,7 @@
         data: {},
         success : function(result){
             var mapContainer = document.getElementById('map'), mapOption={ // 지도를 표시할 div
-                center : new kakao.maps.LatLng(37.3012,127.035
+                center : new kakao.maps.LatLng(37.2999573,127.0367769
                     ), // 지도의 중심좌표
                 level : 2 // 지도의 확대 레벨
             };
@@ -357,13 +380,14 @@
 //마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
             var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
 
-            var roundPosition = new kakao.maps.LatLng(37.301,127.0355);
-            var markerPosition = new kakao.maps.LatLng(37.3015,127.0360);// 마커가 표시될 위치입니다
-            var markerPosition1 = new kakao.maps.LatLng(37.3005,127.0358);
-            var markerPosition2 = new kakao.maps.LatLng(37.2095,127.0359);
-            var markerPosition3 = new kakao.maps.LatLng(37.3007,127.0340);
-            var markerPosition4 = new kakao.maps.LatLng(37.3017,127.0345);
+            var roundPosition = new kakao.maps.LatLng(37.3006794,127.0365546); // 예지관
+            var markerPosition = new kakao.maps.LatLng(37.2993962,127.0364962);// 테니스장
+            var markerPosition1 = new kakao.maps.LatLng(37.3005,127.0358);//운동장
+            var markerPosition2 = new kakao.maps.LatLng(37.3002864,127.0380335); // 포레스트);
+            var markerPosition3 = new kakao.maps.LatLng(37.3002657,127.0348072); //축구장
+            var markerPosition4 = new kakao.maps.LatLng(37.3002864,127.0380335);
 
+            //예지관
             var marker = new kakao.maps.Marker({
                 position: roundPosition,
                 clickable: true,
@@ -402,17 +426,17 @@
             marker5.setMap(map);
 
             //marker
-            var iwContent = '<div style="padding:5px;">중앙도서관 Round</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+            var iwContent = '<div style="padding:5px;">예지관 Round</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
                 iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
             //marker1
-            var iwContent2 = '<div style="padding:5px;">종합강의동 Round</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+            var iwContent2 = '<div style="padding:5px;">테니스장 Round</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
                 iwRemoveable2 = true;
             //marker2
             var iwContent3 = '<div style="padding:5px;">운동장 Round</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
                 iwRemoveable3 = true;
-            var iwContent4 = '<div style="padding:5px;">진리관 Round</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+            var iwContent4 = '<div style="padding:5px;">축구장 Round</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
                 iwRemoveable4 = true;
-            var iwContent5 = '<div style="padding:5px;">경기탑 Round</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+            var iwContent5 = '<div style="padding:5px;">포레스트 Round</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
                 iwRemoveable5 = true;
 
 // 인포윈도우를 생성합니다
@@ -537,11 +561,16 @@
 <br/>
 <br/>
 <section class="playlistSection">
-<input type="radio" name="choose" id="sc1" onclick="dispList('0');"> 중앙도서관 Round
-<input type="radio" name="choose" id="sc2" onclick="dispList('1');"> 운동장 Round
-<input type="radio" name="choose" id="sc3" onclick="dispList('2');"> 종합강의동 Round
-<input type="radio" name="choose" id="sc4" onclick="dispList('3');"> 진리관 Round
-<input type="radio" name="choose" id="sc5" onclick="dispList('4');"> 경기탑 Round
+<label class="box-radio-input"><input type="radio" name="choose" id="sc1" onclick="dispList('0');" value="옵션1"><span>축구장 Round</span></label>
+    <label class="box-radio-input"><input type="radio" name="choose" id="sc2" onclick="dispList('1');" value="옵션2"><span>운동장 Round</span></label>
+    <label class="box-radio-input"><input type="radio" name="choose" id="sc3" onclick="dispList('2');" value="옵션3"><span>예지관 Round</span></label>
+    <label class="box-radio-input"><input type="radio" name="choose" id="sc4" onclick="dispList('3');" value="옵션4"><span>포레스트 Round</span></label>
+    <label class="box-radio-input"><input type="radio" name="choose" id="sc5" onclick="dispList('4');" value="옵션5"><span>테니스장 Round</span></label>
+<%--<input type="radio" name="choose" id="sc1" onclick="dispList('0');"> 축구장 Round--%>
+<%--<input type="radio" name="choose" id="sc2" onclick="dispList('1');"> 운동장 Round--%>
+<%--<input type="radio" name="choose" id="sc3" onclick="dispList('2');"> 예지관 Round--%>
+<%--<input type="radio" name="choose" id="sc4" onclick="dispList('3');"> 포레스트 Round--%>
+<%--<input type="radio" name="choose" id="sc5" onclick="dispList('4');"> 테니스장 Round--%>
 <p>
 <div class="list" id="sc1_list" style="display:none">
     <button type="button" class="button-add">
