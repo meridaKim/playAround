@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter @Setter
@@ -19,7 +21,7 @@ public class Music {
     private int countUp;
     private int countDown;
 
-//
-//   @OneToMany(mappedBy = "music")
-//    private List<Playlist> playlists = new ArrayList<>();
+
+   @OneToMany(mappedBy = "music")
+    private List<Playlist> playlists = new ArrayList<>();
 }
