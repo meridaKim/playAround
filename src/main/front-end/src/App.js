@@ -20,6 +20,7 @@ function App() {
             "vibe":"등하교",
             "countUp": 0,
             "countDown": 0,
+            "cover_src":"./covers/aftereffect_cover.jpg",
             "img_src": "./logos/player_image.png",
             "src": "./musics/stellar_language.mp3",
         },
@@ -31,6 +32,7 @@ function App() {
             "vibe":"등하교",
             "countUp": 0,
             "countDown": 0,
+            "cover_src":"./covers/stellar_language_cover.jpg",
             "img_src": "./logos/player_image.png",
             "src": "./musics/stellar_language.mp3",
         },
@@ -42,6 +44,7 @@ function App() {
             "vibe":"등하교",
             "countUp": 0,
             "countDown": 0,
+            "cover_src":"./covers/twilight_bird_cover.jpg",
             "img_src": "./logos/player_image.png",
             "src": "./musics/twilight_bird.mp3",
         },
@@ -53,6 +56,7 @@ function App() {
             "vibe":"등하교",
             "countUp": 0,
             "countDown": 0,
+            "cover_src":"./covers/aftereffect_cover.jpg",
             "img_src": "./logos/player_image.png",
             "src": "./musics/aftereffect.mp3",
         },
@@ -64,10 +68,107 @@ function App() {
             "vibe":"등하교",
             "countUp": 0,
             "countDown": 0,
+            "cover_src":"./covers/aftereffect_cover.jpg",
+            "img_src": "./logos/player_image.png",
+            "src": "./musics/VOYAGER.mp3",
+        },
+        {
+            "musicId": 13,
+            "musicName": "VOYAGER",
+            "genre": "시티팝",
+            "singerName": "SHIN EVA",
+            "vibe":"등하교",
+            "countUp": 0,
+            "countDown": 0,
+            "cover_src":"./covers/aftereffect_cover.jpg",
+            "img_src": "./logos/player_image.png",
+            "src": "./musics/VOYAGER.mp3",
+        },
+        {
+            "musicId": 13,
+            "musicName": "VOYAGER",
+            "genre": "시티팝",
+            "singerName": "SHIN EVA",
+            "vibe":"등하교",
+            "countUp": 0,
+            "countDown": 0,
+            "cover_src":"./covers/aftereffect_cover.jpg",
+            "img_src": "./logos/player_image.png",
+            "src": "./musics/VOYAGER.mp3",
+        },
+        {
+            "musicId": 13,
+            "musicName": "VOYAGER",
+            "genre": "시티팝",
+            "singerName": "SHIN EVA",
+            "vibe":"등하교",
+            "countUp": 0,
+            "countDown": 0,
+            "cover_src":"./covers/aftereffect_cover.jpg",
+            "img_src": "./logos/player_image.png",
+            "src": "./musics/VOYAGER.mp3",
+        },
+        {
+            "musicId": 13,
+            "musicName": "VOYAGER",
+            "genre": "시티팝",
+            "singerName": "SHIN EVA",
+            "vibe":"등하교",
+            "countUp": 0,
+            "countDown": 0,
+            "cover_src":"./covers/aftereffect_cover.jpg",
+            "img_src": "./logos/player_image.png",
+            "src": "./musics/VOYAGER.mp3",
+        },
+        {
+            "musicId": 13,
+            "musicName": "VOYAGER",
+            "genre": "시티팝",
+            "singerName": "SHIN EVA",
+            "vibe":"등하교",
+            "countUp": 0,
+            "countDown": 0,
+            "cover_src":"./covers/aftereffect_cover.jpg",
+            "img_src": "./logos/player_image.png",
+            "src": "./musics/VOYAGER.mp3",
+        },
+        {
+            "musicId": 13,
+            "musicName": "VOYAGER",
+            "genre": "시티팝",
+            "singerName": "SHIN EVA",
+            "vibe":"등하교",
+            "countUp": 0,
+            "countDown": 0,
+            "cover_src":"./covers/aftereffect_cover.jpg",
             "img_src": "./logos/player_image.png",
             "src": "./musics/VOYAGER.mp3",
         },
     ]);
+
+    function Song({song}){
+        return(
+
+
+            <div>
+                <img
+                    className="playlist-img--image"
+                    src={song.cover_src}
+                    alt=""
+                /> {song.musicName}
+            </div>
+        );
+    }
+
+    function SongList({songs}){
+        return(
+            <div>
+                {songs.map(song =>(
+                    <Song song={song} />
+                ))}
+            </div>
+        );
+    }
 
     const [currentSongIndex, setCurrentSongIndex] = useState(0);
     const [nextSongIndex, setNextSongIndex] = useState(currentSongIndex + 1);
@@ -97,20 +198,19 @@ function App() {
     return (
 
         <div className="App">
-                <Route exact path="/">
-                            백엔드에서 가져온 데이터입니다 : {hello}
-                            <Player currentSongIndex={currentSongIndex}
-                                    setCurrentSongIndex={setCurrentSongIndex}
-                                    nextSongIndex={nextSongIndex}
-                                    songs={songs} />
+            <Route exact path="/">
+                <Player currentSongIndex={currentSongIndex}
+                        setCurrentSongIndex={setCurrentSongIndex}
+                        nextSongIndex={nextSongIndex}
+                        songs={songs} />
 
-                </Route>
-                <Route exact path="/signup">
-                    <Signup />
-                </Route>
-                <Route exact path="/signin">
-                    <Login />
-                </Route>
+            </Route>
+            <Route exact path="/signup">
+                <Signup />
+            </Route>
+            <Route exact path="/signin">
+                <Login />
+            </Route>
 
         </div>
 
