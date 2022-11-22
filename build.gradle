@@ -2,6 +2,8 @@ plugins {
     id 'org.springframework.boot' version '2.7.1'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
+    id 'war'
+    id "nebula.optional-base" version "2.2.2"
     //id 'org.springframework.experimental.aot' version '0.12.0'
 }
 
@@ -9,6 +11,9 @@ group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
+bootWar{
+    enabled = true
+}
 configurations {
     compileOnly {
         extendsFrom annotationProcessor
@@ -22,17 +27,24 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-tomcat'
     annotationProcessor 'org.projectlombok:lombok'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     //MyBatis 추가
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
+    // https://mvnrepository.com/artifact/javax.servlet/jstl
+    implementation group: 'javax.servlet', name: 'jstl', version: '1.2'
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+    implementation 'javax.servlet:jstl'
 
 
 
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
     runtimeOnly 'mysql:mysql-connector-java'
     //implementation 'android.arch.persistence.room:runtime:1.1.1'
     //annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
     compileOnly 'org.projectlombok:lombok'
+
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'

@@ -12,7 +12,7 @@ import java.util.List;
 public class Music {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="music_id")
+    @Column(name="music_id" , length = 100)
     private int musicId;
     private String musicName;
     private String genre;

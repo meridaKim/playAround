@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class Playlist {
     @javax.persistence.Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "playlistId")
+    @Column(name = "playlist_id", length = 100)
     private int playlistId;
     private String countPlaylist;
 
@@ -19,6 +19,6 @@ public class Playlist {
     private Music music;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_no")
     private User user;
 }

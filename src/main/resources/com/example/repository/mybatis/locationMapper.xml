@@ -5,12 +5,12 @@
 <mapper namespace="com.example.repository.mybatis.locationMapper">
     <select id="selectListCount" resultType="_int">
         SELECT COUNT(*)
-        FROM LOCATION_TB
-        WHERE USER_NO = #{userNo}
+        FROM LOCATION
+        WHERE USER_NO = #{user.userNo}
     </select>
 
     <insert id="insertCoordinate" parameterType="location">
-        INSERT INTO LOCATION_TB(
+        INSERT INTO LOCATION(
             LOCATION_NO,
             USER_NO,
             LOCATION_LATITUDE,
@@ -18,19 +18,19 @@
             LOCATION_DATE
         )
         VALUES (
-                   SEQ_LOCATION_NO.NEXTVAL,
-                   #{userNo},
+                       (select *from (select max(LOCATION_NO)+1 from LOCATION) next),
+                   #{user.userNo},
                    #{locationLatitude},
                    #{locationLongitude},
-                   SYSDATE
+                   NOW()
                )
     </insert>
 
     <update id="updateCoordinate" parameterType="location">
-        UPDATE LOCATION_TB
+        UPDATE LOCATION
         SET LOCATION_LATITUDE = #{locationLatitude},
             LOCATION_LONGITUDE = #{locationLongitude}
-        WHERE USER_NO = #{userNo}
+        WHERE Lo = #{user.userNo}
     </update>
 
 
@@ -42,6 +42,6 @@
     <select id="selectMapList" resultMap="loResultSet">
         SELECT LOCATION_LATITUDE,
                LOCATION_LONGITUDE
-        FROM LOCATION_TB
+        FROM LOCATION
     </select>
 </mapper>
