@@ -20,7 +20,7 @@ public class JspController {
     }
 
     @RequestMapping(value = "/MainPage", method = RequestMethod.GET)
-    public String Main(Locale locale, Model model) {
+    public String MainPage(Locale locale, Model model) {
         logger.info("method [" + Thread.currentThread().getStackTrace()[1].getMethodName() + "]");	// 로그에 메소드명 나타내기x
         return "MainPage";
     }
