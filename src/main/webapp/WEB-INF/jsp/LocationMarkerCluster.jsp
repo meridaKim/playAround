@@ -10,35 +10,96 @@
         html, body {
             width: 100%;
             height: 100%;
+            background: #EFEFEF;
+
         }
         #line_first_row{
             position: absolute;
-            width: 1063px;
+            width: 950px;
             height: 0px;
-            left: 200px;
-            top: 150px;
+            left: 342px;
+            top: 200px;
 
             border: 1.30114px solid #474747;
         }
+        #rightline{
+            position: absolute;
+            width: 1078px;
+            height: 0px;
+            left: 1180px;
+
+            top: 540px;
+            border: 1.30114px solid #474747;
+            transform: rotate(-90deg);
+        }
+        #finalline{
+            position: absolute;
+            width: 1078px;
+            height: 0px;
+            left: -197px;
+
+            top: 540px;
+            border: 1.30114px solid #474747;
+            transform: rotate(-90deg);
+        }
+
 
         #leftline{
             position: absolute;
             width: 1090px;
             height: 600px;
-            left: 866px;
+            left: 1050px;
             top: 230px;
             border: 1.30114px
             solid #474747;
             transform: rotate(-90deg);
+        }
+        #line_row{
+            position: absolute;
+            width: 420px;
+            height: 0px;
+            left: 1296px;
+            top: 746px;
+
+            border: 1.30114px solid #474747;
         }
 
         #player_img{
             position: absolute;
             width: 400px;
             height: 280px;
-            left: 1090px;
+            left: 1300px;
             top: 160px;
 
+        }
+        #now_playing{
+            position: absolute;
+            width: 200px;
+            height: 30px;
+            left: 1320px;
+            top: 40px;
+        }
+        #play_button{
+            position: absolute;
+            width: 70.84px;
+            height: 70.84px;
+            left: 1470px;
+            top: 600px;
+
+        }
+        #before_button{
+            position: absolute;
+            width: 70.84px;
+            height: 70.84px;
+            left: 1370px;
+            top: 600px;
+        }
+        #next_button{
+            position: absolute;
+            width: 70.84px;
+            height: 70.84px;
+            left: 1570px;
+            top: 600px;
         }
 
         #map {
@@ -193,9 +254,10 @@
         }
 
         .menulist {
+
             list-style-type: none;
-            margin-left : 100px;
-            margin-top:30px;
+            margin-left : 250px;
+            margin-top:60px;
             /*padding :10px 10px;*/
             overflow: hidden;
         }
@@ -216,11 +278,11 @@
 
         #list a{
             float: right;
-            margin-right : 520px;
+            margin-right : 370px;
             display: block;
             color:black;
             text-align: center;
-            padding : 14px 30px;
+            padding : 0px 20px;
             text-decoration: none;
             font-size: 25px;
         }
@@ -242,14 +304,26 @@
         </ul>
     </div>
 </div>
+<div id="finalline"></div>
+<div id="rightline"></div>
 <div id="line_first_row"></div>
 <div id="player">
     <img id="player_img" src="https://ifh.cc/g/A4dMO7.png" width="300px" height="300px">
 </div>
-<%--<div id="play_button">--%>
-<%--    <img id="player_button" src="https://ifh.cc/g/COOJwH.png">--%>
-<%--</div>--%>
+<div >
+    <img id="now_playing" src="https://ifh.cc/g/2Gw0AO.png" >
+</div>
+<div id="play_button">
+    <img id="player_button" src="https://ifh.cc/g/COOJwH.png">
+</div>
+<div id="before_button">
+    <img id="beforemusic_button" src="https://ifh.cc/g/osLmdz.png">
+</div>
+<div id="next_button">
+    <img id="nextmusic_button" src="https://ifh.cc/g/znnoCy.png">
+</div>
 <div id="leftline"></div>
+<div id="line_row"></div>
 <br>
 <div id="map" style="width:100%;height:350px;"></div>
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -270,7 +344,8 @@
             };
             mapContainer.style.width = '950px';
             mapContainer.style.height = '400px';
-            mapContainer.style.marginLeft = '150px';
+            mapContainer.style.marginTop = '127px';
+            mapContainer.style.marginLeft = '337px';
 
             var map = new kakao.maps.Map(mapContainer, mapOption);
 
