@@ -6,6 +6,7 @@ import './Player.css';
 import Player from "./components/Player";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
+import Space from "./components/Space";
 
 
 function App() {
@@ -14,10 +15,12 @@ function App() {
     const [songs] = useState([
         {
             "musicId": 9,
+            "vibeKey":"asdf",
             "musicName": "-",
             "genre": "발라드",
             "singerName": "-",
             "vibe":"등하교",
+            "location":"부산시 남구",
             "countUp": 0,
             "countDown": 0,
             "cover_src":"./covers/aftereffect_cover.jpg",
@@ -26,10 +29,12 @@ function App() {
         },
         {
             "musicId": 10,
+            "vibeKey":"b",
             "musicName": "별의 언어",
             "genre": "발라드",
             "singerName": "뉴이스트",
-            "vibe":"등하교",
+            "location":"수원시 영통구",
+            "vibe":"캠퍼스",
             "countUp": 0,
             "countDown": 0,
             "cover_src":"./covers/stellar_language_cover.jpg",
@@ -38,10 +43,12 @@ function App() {
         },
         {
             "musicId": 11,
+            "vibeKey":"c",
             "musicName": "황혼의 새",
             "genre": "발라드",
             "singerName": "AOT",
-            "vibe":"등하교",
+            "location":"수원시 영통구",
+            "vibe":"출퇴근",
             "countUp": 0,
             "countDown": 0,
             "cover_src":"./covers/twilight_bird_cover.jpg",
@@ -50,10 +57,12 @@ function App() {
         },
         {
             "musicId": 12,
+            "vibeKey":"d",
             "musicName": "후유증",
             "genre": "발라드",
             "singerName": "뉴이스트",
-            "vibe":"등하교",
+            "location":"수원시 영통구",
+            "vibe":"월요일",
             "countUp": 0,
             "countDown": 0,
             "cover_src":"./covers/aftereffect_cover.jpg",
@@ -62,9 +71,25 @@ function App() {
         },
         {
             "musicId": 13,
+            "vibeKey":"e",
             "musicName": "VOYAGER",
             "genre": "시티팝",
             "singerName": "SHIN EVA",
+            "location":"수원시 영통구",
+            "vibe":"따뜻한",
+            "countUp": 0,
+            "countDown": 0,
+            "cover_src":"./covers/aftereffect_cover.jpg",
+            "img_src": "./logos/player_image.png",
+            "src": "./musics/VOYAGER.mp3",
+        },
+        {
+            "musicId": 14,
+            "vibeKey":"f",
+            "musicName": "VOYAGER",
+            "genre": "시티팝",
+            "singerName": "SHIN EVA",
+            "location":"수원시 영통구",
             "vibe":"등하교",
             "countUp": 0,
             "countDown": 0,
@@ -73,10 +98,12 @@ function App() {
             "src": "./musics/VOYAGER.mp3",
         },
         {
-            "musicId": 13,
+            "musicId": 15,
+            "vibeKey":"g",
             "musicName": "VOYAGER",
             "genre": "시티팝",
             "singerName": "SHIN EVA",
+            "location":"수원시 영통구",
             "vibe":"등하교",
             "countUp": 0,
             "countDown": 0,
@@ -85,10 +112,12 @@ function App() {
             "src": "./musics/VOYAGER.mp3",
         },
         {
-            "musicId": 13,
+            "musicId": 16,
+            "vibeKey":"h",
             "musicName": "VOYAGER",
             "genre": "시티팝",
             "singerName": "SHIN EVA",
+            "location":"수원시 영통구",
             "vibe":"등하교",
             "countUp": 0,
             "countDown": 0,
@@ -97,10 +126,12 @@ function App() {
             "src": "./musics/VOYAGER.mp3",
         },
         {
-            "musicId": 13,
+            "musicId": 17,
+            "vibeKey":"i",
             "musicName": "VOYAGER",
             "genre": "시티팝",
             "singerName": "SHIN EVA",
+            "location":"수원시 영통구",
             "vibe":"등하교",
             "countUp": 0,
             "countDown": 0,
@@ -109,10 +140,12 @@ function App() {
             "src": "./musics/VOYAGER.mp3",
         },
         {
-            "musicId": 13,
+            "musicId": 18,
+            "vibeKey":"j",
             "musicName": "VOYAGER",
             "genre": "시티팝",
             "singerName": "SHIN EVA",
+            "location":"수원시 영통구",
             "vibe":"등하교",
             "countUp": 0,
             "countDown": 0,
@@ -121,22 +154,12 @@ function App() {
             "src": "./musics/VOYAGER.mp3",
         },
         {
-            "musicId": 13,
+            "musicId": 19,
+            "vibeKey":"k",
             "musicName": "VOYAGER",
             "genre": "시티팝",
             "singerName": "SHIN EVA",
-            "vibe":"등하교",
-            "countUp": 0,
-            "countDown": 0,
-            "cover_src":"./covers/aftereffect_cover.jpg",
-            "img_src": "./logos/player_image.png",
-            "src": "./musics/VOYAGER.mp3",
-        },
-        {
-            "musicId": 13,
-            "musicName": "VOYAGER",
-            "genre": "시티팝",
-            "singerName": "SHIN EVA",
+            "location":"수원시 영통구",
             "vibe":"등하교",
             "countUp": 0,
             "countDown": 0,
@@ -160,19 +183,9 @@ function App() {
         );
     }
 
-    function SongList({songs}){
-        return(
-            <div>
-                {songs.map(song =>(
-                    <Song song={song} />
-                ))}
-            </div>
-        );
-    }
 
     const [currentSongIndex, setCurrentSongIndex] = useState(0);
     const [nextSongIndex, setNextSongIndex] = useState(currentSongIndex + 1);
-    const [user,setUser]=useState([]);
     const [hello, setHello] = useState('')
 
 
@@ -199,11 +212,18 @@ function App() {
 
         <div className="App">
             <Route exact path="/">
+
                 <Player currentSongIndex={currentSongIndex}
                         setCurrentSongIndex={setCurrentSongIndex}
                         nextSongIndex={nextSongIndex}
                         songs={songs} />
 
+            </Route>
+            <Route exact path="/space">
+                <Space currentSongIndex={currentSongIndex}
+                        setCurrentSongIndex={setCurrentSongIndex}
+                        nextSongIndex={nextSongIndex}
+                        songs={songs} />
             </Route>
             <Route exact path="/signup">
                 <Signup />

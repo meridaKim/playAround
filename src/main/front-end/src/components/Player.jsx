@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import {Link, Route, Switch} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import PlayerDetail from "./PlayerDetail";
 import PlayerControls from "./PlayerControls";
 import styled from "styled-components";
@@ -21,10 +21,34 @@ function Song({song}){
     );
 }
 
+function Vibe({songs}){
+    return(
+        <div className="vibe" onClick={
+            ()=>{
+                sessionStorage.setItem("vibe",songs.vibe);
+                window.location.href = "/";
+                // sessionStorage.removeItem("vibe");
+            }
+        }>#{songs.vibe}</div>
+    );
+
+}
+
+
+
+
 function Player(props) {
+    const SearchedLocations = props.songs.filter((songs)=>{
+        return songs.location.includes(sessionStorage.getItem("location"));
+    });
+    const SearchedVibes = props.songs.filter((songs)=>{
+        return songs.vibe.includes(sessionStorage.getItem("vibe"));
+    });
     const audioElement = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
     const [isLogin, setIsLogin] = useState(false); //로그인 관리
+    const [isLocation, setIsLocation] = useState(false);
+    const [isVibe, setVibe] = useState(false);
 
     useEffect(() => {
         if (isPlaying) {
@@ -33,6 +57,7 @@ function Player(props) {
             audioElement.current.pause();
         }
 
+        //로그인 확인
         if (sessionStorage.getItem("name") === null) {
             // sessionStorage 에 name 라는 key 값으로 저장된 값이 없다면
             console.log("isLogin ?? :: ", isLogin);
@@ -42,7 +67,25 @@ function Player(props) {
             setIsLogin(true);
             console.log("isLogin ?? :: ", isLogin);
         }
-    });
+
+        //위치설정 확인
+        if(sessionStorage.getItem("location") === null){
+            console.log("isLocation ?? :: ", isLocation);
+        }else{
+            setIsLocation(true);
+            console.log("location");
+        }
+
+        //바이브 클릭 확인
+        if(sessionStorage.getItem("vibe") === null){
+            console.log("isvibe ?? :: ", isVibe);
+        }else{
+            setVibe(true);
+            console.log("vibe",sessionStorage.getItem("vibe"));
+        }
+    }, [isPlaying, isLogin, isLocation, isVibe]);
+
+
 
 
     const SkipSong = (forwards = true) => {
@@ -75,12 +118,14 @@ function Player(props) {
     return (
         <>
             <div className="container">
+            <div className="transform_arrow"><img src="./logos/transform_arrow.png" alt="space" /></div>
             <div className="song-place-container">
                 <div className="header">
                     <div className="song-place">
                         <div className="song-place-logo">
                             <img
                                 src="./logos/songplace.png"
+                                alt=""
                             />
                         </div>
                         <div className="space">space</div>
@@ -104,17 +149,56 @@ function Player(props) {
 
                     }
                 </div>
+
                 <div className="location">
                     <div className="item">지금나는?</div>
-                    <div className="item">우주를 헤매는 중</div>
-                    <div className="item">현재 위치를 설정해보세요</div>
-                    <div className="item">내 위치 탐색하기</div>
+                    {isLocation ? (
+                            <div className="item">{sessionStorage.getItem("location")}</div>
+                        )
+                        : (<div className="item">우주를 헤매는 중</div>)
+                    }
+                    {isLocation ? (
+                            <div className="item">어떤 vibe의 노래를 들을까?</div>
+                        )
+                        : (<div className="item">현재 위치를 설정해보세요</div>)
+                    }
+
+                    {isLocation ? (<div className="vibe_container">{SearchedLocations.map(
+                                (songs) =>(<Vibe key={songs.musicId} songs={songs} />)
+                            )}</div>
+                        )
+                        :(<div className="item" onClick={
+                            ()=>{
+                                sessionStorage.setItem("location","수원시 영통구");
+                                window.location.href = "/";
+                            }
+
+                        }>내 위치 탐색하기</div>)}
+
+
                 </div>
-                <div className="playlist-item">
-                    {props.songs.map(song =>(
-                        <Song song={song} />
-                    ))}
+                <div className="vibe_name">
+                    #{sessionStorage.getItem("vibe")}
                 </div>
+                {isVibe ? (
+
+                        <div className="playlist-item">
+                            {SearchedVibes.map((song) => {
+                                console.log(song);
+                                return <Song key={song.vibeKey} song={song}/>
+                            })}
+                        </div>
+                    )
+                    :
+                    (
+                        <div className="playlist-item">
+                            {props.songs.map((song) => {
+                                console.log(song);
+                                return <Song key={song.vibeKey} song={song}/>
+                            })}
+                        </div>
+                    )
+                }
             </div>
 
 
@@ -124,6 +208,7 @@ function Player(props) {
                     <div className="text-anim">
                        <img
                            src="./logos/nowplaying.png"
+                           alt=""
                        />
                     </div>
                     <div className="music-player">
