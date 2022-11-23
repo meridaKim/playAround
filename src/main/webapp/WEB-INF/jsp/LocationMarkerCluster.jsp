@@ -46,10 +46,10 @@
 
         #leftline{
             position: absolute;
-            width: 1090px;
-            height: 600px;
-            left: 1050px;
-            top: 230px;
+            width: 1078px;
+            height: 0px;
+            left: 756px;
+            top: 540px;
             border: 1.30114px
             solid #474747;
             transform: rotate(-90deg);
@@ -105,6 +105,7 @@
         #map {
             width: 80%;
             height: 80%;
+            border: solid black 1px;
         }
         .mapSection{
             position : center;
@@ -128,22 +129,23 @@
             width : 300px;
             background-size: 50px 50px;
             background-image: url("https://ifh.cc/g/mWBBwa.png"); /* 16px x 16px */
-            background-color: #dbdbdb; /* make the button transparent */
+            background-color: #EFEFEF; /* make the button transparent */
             background-repeat: no-repeat;  /* make the background image appear only once */
             background-position: 10px 15px;  /* equivalent to 'top left' */
             border: none;           /* assuming we don't want any borders */
             cursor: pointer;        /* make the cursor like hovering over an <a> element */
             height: 80px;           /* make this the size of your image */
             padding-left: 70px;     /* make text start to the right of the image */
-            vertical-align: middle; /* align the text vertically centered */
-            border-radius: 12px;
+            vertical-align: middle;
+            /* align the text vertically centered */
+
         }
 
         .button-add2 {
             width : 300px;
             background-size: 50px 50px;
             background-image: url("https://ifh.cc/g/fbhd89.png"); /* 16px x 16px */
-            background-color: #dbdbdb; /* make the button transparent */
+            background-color: #EFEFEF; /* make the button transparent */
             background-repeat: no-repeat;  /* make the background image appear only once */
             background-position: 10px 15px;  /* equivalent to 'top left' */
             border: none;           /* assuming we don't want any borders */
@@ -151,14 +153,16 @@
             height: 80px;           /* make this the size of your image */
             padding-left: 70px;     /* make text start to the right of the image */
             vertical-align: middle; /* align the text vertically centered */
-            border-radius: 12px;
+   /* align the text vertically centered */
+
+
         }
 
         .button-add3 {
             width : 300px;
             background-size: 50px 50px;
             background-image: url("https://ifh.cc/g/8WdaxN.png"); /* 16px x 16px */
-            background-color: #dbdbdb; /* make the button transparent */
+            background-color: #EFEFEF; /* make the button transparent */
             background-repeat: no-repeat;  /* make the background image appear only once */
             background-position: 10px 15px;  /* equivalent to 'top left' */
             border: none;           /* assuming we don't want any borders */
@@ -166,13 +170,15 @@
             height: 80px;           /* make this the size of your image */
             padding-left: 70px;     /* make text start to the right of the image */
             vertical-align: middle; /* align the text vertically centered */
-            border-radius: 12px;
+     /* align the text vertically centered */
+
+
         }
         .button-add4 {
             width : 300px;
             background-size: 50px 50px;
             background-image: url("https://ifh.cc/g/v0fkTo.png"); /* 16px x 16px */
-            background-color: #dbdbdb; /* make the button transparent */
+            background-color: #EFEFEF; /* make the button transparent */
             background-repeat: no-repeat;  /* make the background image appear only once */
             background-position: 10px 15px;  /* equivalent to 'top left' */
             border: none;           /* assuming we don't want any borders */
@@ -180,13 +186,15 @@
             height: 80px;           /* make this the size of your image */
             padding-left: 70px;     /* make text start to the right of the image */
             vertical-align: middle; /* align the text vertically centered */
-            border-radius: 12px;
+            /* align the text vertically centered */
+
+
         }
         .button-add5 {
             width : 300px;
             background-size: 50px 50px;
             background-image: url("https://ifh.cc/g/BXAVBz.png"); /* 16px x 16px */
-            background-color: #dbdbdb; /* make the button transparent */
+            background-color: #EFEFEF; /* make the button transparent */
             background-repeat: no-repeat;  /* make the background image appear only once */
             background-position: 10px 15px;  /* equivalent to 'top left' */
             border: none;           /* assuming we don't want any borders */
@@ -194,13 +202,15 @@
             height: 80px;           /* make this the size of your image */
             padding-left: 70px;     /* make text start to the right of the image */
             vertical-align: middle; /* align the text vertically centered */
-            border-radius: 12px;
+            /* align the text vertically centered */
+
+
         }
         .button-add6 {
             width : 300px;
             background-size: 50px 50px;
             background-image: url("https://ifh.cc/g/fZlJXh.png"); /* 16px x 16px */
-            background-color: #dbdbdb; /* make the button transparent */
+            background-color: #EFEFEF; /* make the button transparent */
             background-repeat: no-repeat;  /* make the background image appear only once */
             background-position: 10px 15px;  /* equivalent to 'top left' */
             border: none;           /* assuming we don't want any borders */
@@ -208,13 +218,15 @@
             height: 80px;           /* make this the size of your image */
             padding-left: 70px;     /* make text start to the right of the image */
             vertical-align: middle; /* align the text vertically centered */
-            border-radius: 12px;
+            /* align the text vertically centered */
+
+
         }
         .button-add7 {
             width : 300px;
             background-size: 50px 50px;
             background-image: url("https://ifh.cc/g/v0fkTo.png"); /* 16px x 16px */
-            background-color: #dbdbdb; /* make the button transparent */
+            background-color: #EFEFEF; /* make the button transparent */
             background-repeat: no-repeat;  /* make the background image appear only once */
             background-position: 10px 15px;  /* equivalent to 'top left' */
             border: none;           /* assuming we don't want any borders */
@@ -222,13 +234,15 @@
             height: 80px;           /* make this the size of your image */
             padding-left: 70px;     /* make text start to the right of the image */
             vertical-align: middle; /* align the text vertically centered */
-            border-radius: 12px;
+            /* align the text vertically centered */
+
         }
         .button-add8 {
             width : 300px;
             background-size: 50px 50px;
             background-image: url("https://ifh.cc/g/cQ3nqS.png"); /* 16px x 16px */
-            background-color: #dbdbdb; /* make the button transparent */
+             /* make the button transparent */
+            background-color: #EFEFEF;
             background-repeat: no-repeat;  /* make the background image appear only once */
             background-position: 10px 15px;  /* equivalent to 'top left' */
             border: none;           /* assuming we don't want any borders */
@@ -236,13 +250,14 @@
             height: 80px;           /* make this the size of your image */
             padding-left: 70px;     /* make text start to the right of the image */
             vertical-align: middle; /* align the text vertically centered */
-            border-radius: 12px;
+            /* align the text vertically centered */
+
         }
         .button-add9 {
             width : 300px;
             background-size: 50px 50px;
             background-image: url("https://ifh.cc/g/5QwtgS.png"); /* 16px x 16px */
-            background-color: #dbdbdb; /* make the button transparent */
+            background-color: #EFEFEF; /* make the button transparent */
             background-repeat: no-repeat;  /* make the background image appear only once */
             background-position: 10px 15px;  /* equivalent to 'top left' */
             border: none;           /* assuming we don't want any borders */
@@ -250,7 +265,8 @@
             height: 80px;           /* make this the size of your image */
             padding-left: 70px;     /* make text start to the right of the image */
             vertical-align: middle; /* align the text vertically centered */
-            border-radius: 12px;
+            /* align the text vertically centered */
+
         }
 
         .menulist {
@@ -278,7 +294,7 @@
 
         #list a{
             float: right;
-            margin-right : 370px;
+            margin-right : 1000px;
             display: block;
             color:black;
             text-align: center;
@@ -286,7 +302,109 @@
             text-decoration: none;
             font-size: 25px;
         }
+        #round_list{
+            position: absolute;
+            width: 1000px;
+            height: 80px;
+            left: 450px;
+            top: 700px;
 
+
+        }
+        #search{
+            position: absolute;
+            width: 200px;
+            height: 23px;
+            left: 400px;
+            top: 195px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 25px;
+            line-height: 23px;
+            /* identical to box height */
+
+
+            color: #474747;
+        }
+
+        #search_img{
+            position: absolute;
+            width: 30px;
+            height: 23px;
+            left: 350px;
+            top: 220px;
+
+        }
+        #playlisttext{
+            position: absolute;
+            width: 200px;
+            height: 23px;
+            left: 1330px;
+            top: 740px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 25px;
+            line-height: 23px;
+            /* identical to box height */
+
+
+            color: #474747;
+        }
+        #savelist{
+            position: absolute;
+            width: 200px;
+            height: 23px;
+            left: 1440px;
+            top: 740px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 25px;
+            line-height: 23px;
+            color: gray;
+
+
+        }
+#repeat{
+    position: absolute;
+    width: 70.84px;
+    height: 70.84px;
+    left: 1670px;
+    top: 620px;
+}
+#random{
+    position: absolute;
+    width: 70.84px;
+    height: 70.84px;
+    left: 1320px;
+    top: 620px;
+}
+        .box-radio-input input[type="radio"]{
+            display:none;
+        }
+
+        .box-radio-input input[type="radio"] + span{
+            display:inline-block;
+            background:none;
+            border:1px solid #dfdfdf;
+            padding:0px 10px;
+            text-align:center;
+            height:35px;
+            line-height:33px;
+            font-weight:500;
+            cursor:pointer;
+        }
+
+        .box-radio-input input[type="radio"]:checked + span{
+            border:1px solid #23a3a7;
+            background:#02457A;
+            color:#fff;
+        }
     </style>
 </head>
 <body>
@@ -324,6 +442,12 @@
 </div>
 <div id="leftline"></div>
 <div id="line_row"></div>
+<div id="random">
+    <img id="random_button" src="https://ifh.cc/g/5nRd1y.png">
+</div>
+<div id="repeat">
+    <img id="repeat_button" src="https://ifh.cc/g/XlHk3w.png">
+</div>
 <br>
 <div id="map" style="width:100%;height:350px;"></div>
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -338,7 +462,7 @@
         data: {},
         success : function(result){
             var mapContainer = document.getElementById('map'), mapOption={ // 지도를 표시할 div
-                center : new kakao.maps.LatLng(37.3012,127.035
+                center : new kakao.maps.LatLng(37.2999573,127.0367769
                     ), // 지도의 중심좌표
                 level : 2 // 지도의 확대 레벨
             };
@@ -357,17 +481,17 @@
 //마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
             var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
 
-            var roundPosition = new kakao.maps.LatLng(37.301,127.0355);
-            var markerPosition = new kakao.maps.LatLng(37.3015,127.0360);// 마커가 표시될 위치입니다
-            var markerPosition1 = new kakao.maps.LatLng(37.3005,127.0358);
-            var markerPosition2 = new kakao.maps.LatLng(37.2095,127.0359);
-            var markerPosition3 = new kakao.maps.LatLng(37.3007,127.0340);
-            var markerPosition4 = new kakao.maps.LatLng(37.3017,127.0345);
+            var roundPosition = new kakao.maps.LatLng(37.3006794,127.0365546); // 예지관
+            var markerPosition = new kakao.maps.LatLng(37.2993962,127.0364962);// 테니스장
+            var markerPosition1 = new kakao.maps.LatLng(37.3005,127.0358);//운동장
+            var markerPosition2 = new kakao.maps.LatLng(37.3002864,127.0380335); // 포레스트);
+            var markerPosition3 = new kakao.maps.LatLng(37.3002657,127.0348072); //축구장
+            var markerPosition4 = new kakao.maps.LatLng(37.3002864,127.0380335);
 
             var marker = new kakao.maps.Marker({
                 position: roundPosition,
                 clickable: true,
-                image : markerImage
+                image: markerImage
             });
             var marker1 = new kakao.maps.Marker({
                 position: markerPosition,
@@ -401,18 +525,17 @@
             marker4.setMap(map);
             marker5.setMap(map);
 
-            //marker
-            var iwContent = '<div style="padding:5px;">중앙도서관 Round</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+            var iwContent = '<div style="padding:5px;">예지관 Round</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
                 iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
             //marker1
-            var iwContent2 = '<div style="padding:5px;">종합강의동 Round</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+            var iwContent2 = '<div style="padding:5px;">테니스장 Round</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
                 iwRemoveable2 = true;
             //marker2
             var iwContent3 = '<div style="padding:5px;">운동장 Round</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
                 iwRemoveable3 = true;
-            var iwContent4 = '<div style="padding:5px;">진리관 Round</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+            var iwContent4 = '<div style="padding:5px;">축구장 Round</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
                 iwRemoveable4 = true;
-            var iwContent5 = '<div style="padding:5px;">경기탑 Round</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+            var iwContent5 = '<div style="padding:5px;">포레스트 Round</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
                 iwRemoveable5 = true;
 
 // 인포윈도우를 생성합니다
@@ -536,29 +659,37 @@
 </div>
 <br/>
 <br/>
+<h4 id="search">위치 검색하기</h4>
+<h4 id="playlisttext">재생목록</h4>
+<h4 id="savelist">저장목록</h4>
+<div id="search_img">
+    <img id="search_logo_img" src="https://ifh.cc/g/dMohwC.png">
+</div>
 <section class="playlistSection">
-<input type="radio" name="choose" id="sc1" onclick="dispList('0');"> 중앙도서관 Round
-<input type="radio" name="choose" id="sc2" onclick="dispList('1');"> 운동장 Round
-<input type="radio" name="choose" id="sc3" onclick="dispList('2');"> 종합강의동 Round
-<input type="radio" name="choose" id="sc4" onclick="dispList('3');"> 진리관 Round
-<input type="radio" name="choose" id="sc5" onclick="dispList('4');"> 경기탑 Round
-<p>
+    <div id="round_list">
+        <label class="box-radio-input"><input type="radio" name="choose" id="sc1" onclick="dispList('0');" value="옵션1"><span>축구장 Round</span></label>
+        <label class="box-radio-input"><input type="radio" name="choose" id="sc2" onclick="dispList('1');" value="옵션2"><span>운동장 Round</span></label>
+        <label class="box-radio-input"><input type="radio" name="choose" id="sc3" onclick="dispList('2');" value="옵션3"><span>예지관 Round</span></label>
+        <label class="box-radio-input"><input type="radio" name="choose" id="sc4" onclick="dispList('3');" value="옵션4"><span>포레스트 Round</span></label>
+        <label class="box-radio-input"><input type="radio" name="choose" id="sc5" onclick="dispList('4');" value="옵션5"><span>테니스장 Round</span></label>
+
+        <p>
 <div class="list" id="sc1_list" style="display:none">
     <button type="button" class="button-add">
 <%--        <img src="https://ifh.cc/g/mWBBwa.png" alt=""  height ="80" width="80">--%>
-        야작하면서 듣다 죽어도 모르는 음악들 <br>
+       <b> 야작하면서 듣다 죽어도 모르는 음악들 </b><br>
             19/20명 참여중
     </button>
     <br/><p></p>
     <button type="button" class="button-add2">
         <%--        <img src="https://ifh.cc/g/mWBBwa.png" alt=""  height ="80" width="80">--%>
-            화가날 땐 이 음악들을 들어봐요 <br>
+            <b>화가날 땐 이 음악들을 들어봐요 </b><br>
         20/20명 참여중
     </button>
     <br/><p></p>
     <button type="button" class="button-add3">
         <%--        <img src="https://ifh.cc/g/mWBBwa.png" alt=""  height ="80" width="80">--%>
-            집에 가고 싶을 때 듣는 플레이리스트 <br>
+            <b>집에 가고 싶을 때 듣는 플레이리스트</b> <br>
         10/15명 참여중
     </button>
     <br/>
@@ -567,19 +698,19 @@
 <div id="sc2_list" style="display:none">
     <button type="button" class="button-add4">
         <%--        <img src="https://ifh.cc/g/mWBBwa.png" alt=""  height ="80" width="80">--%>
-            교수님이 미울 때 듣는 음악 <br>
+            <b>교수님이 미울 때 듣는 음악</b> <br>
         19/20명 참여중
     </button>
     <br/><p></p>
     <button type="button" class="button-add5">
         <%--        <img src="https://ifh.cc/g/mWBBwa.png" alt=""  height ="80" width="80">--%>
-            미사모 : 미노이 사랑해 모음집 <br>
+            <b>미사모 : 미노이 사랑해 모음집</b> <br>
             20/20명 참여중
     </button>
     <br/><p></p>
     <button type="button" class="button-add6">
         <%--        <img src="https://ifh.cc/g/mWBBwa.png" alt=""  height ="80" width="80">--%>
-            노동요 모음집 <br>
+           <b> 노동요 모음집</b> <br>
             4/20명 참여중
     </button>
     <br/>
@@ -587,19 +718,19 @@
 <div id="sc3_list" style="display:none">
     <button type="button" class="button-add7">
         <%--        <img src="https://ifh.cc/g/mWBBwa.png" alt=""  height ="80" width="80">--%>
-            교수님이 미울 때 듣는 음악2 <br>
+            <b>교수님이 미울 때 듣는 음악2</b> <br>
             10/15명 참여중
     </button>
     <br/><p></p>
     <button type="button" class="button-add8">
         <%--        <img src="https://ifh.cc/g/mWBBwa.png" alt=""  height ="80" width="80">--%>
-            교수님 죄송합니다 <br>
+            <b>교수님 죄송합니다</b> <br>
         19/20명 참여중
     </button>
     <br/><p></p>
     <button type="button" class="button-add">
         <%--        <img src="https://ifh.cc/g/mWBBwa.png" alt=""  height ="80" width="80">--%>
-        야작하면서 듣다 죽어도 모르는 음악들 <br>
+        <b>야작하면서 듣다 죽어도 모르는 음악들 </b><br>
         19/20명 참여중
     </button>
     <br/>
@@ -607,19 +738,19 @@
 <div id="sc4_list" style="display:none">
     <button type="button" class="button-add9">
         <%--        <img src="https://ifh.cc/g/mWBBwa.png" alt=""  height ="80" width="80">--%>
-        야작하면서 듣다 죽어도 모르는 음악들 <br>
+        <b>야작하면서 듣다 죽어도 모르는 음악들</b> <br>
         19/20명 참여중
     </button>
     <br/><p></p>
     <button type="button" class="button-add3">
         <%--        <img src="https://ifh.cc/g/mWBBwa.png" alt=""  height ="80" width="80">--%>
-        집에 가고 싶을 때 듣는 플레이리스트 <br>
+        <b>집에 가고 싶을 때 듣는 플레이리스트</b> <br>
         10/15명 참여중
     </button>
     <br/><p></p>
     <button type="button" class="button-add4">
         <%--        <img src="https://ifh.cc/g/mWBBwa.png" alt=""  height ="80" width="80">--%>
-        교수님이 미울 때 듣는 음악 <br>
+        <b>교수님이 미울 때 듣는 음악</b> <br>
         19/20명 참여중
     </button>
     <br/>
@@ -627,23 +758,25 @@
 <div id="sc5_list" style="display:none">
     <button type="button" class="button-add2">
         <%--        <img src="https://ifh.cc/g/mWBBwa.png" alt=""  height ="80" width="80">--%>
-        화가날 땐 이 음악들을 들어봐요 <br>
+        <b>내적댄스 유발하는 플레이리스트<b></b> <br>
+        </b> <br>
         20/20명 참여중
     </button>
     <br/><p></p>
     <button type="button" class="button-add6">
         <%--        <img src="https://ifh.cc/g/mWBBwa.png" alt=""  height ="80" width="80">--%>
-        노동요 모음집 <br>
+        <b>노동요 모음집</b> <br>
         4/20명 참여중
     </button>
     <br/><p></p>
     <button type="button" class="button-add8">
         <%--        <img src="https://ifh.cc/g/mWBBwa.png" alt=""  height ="80" width="80">--%>
-        교수님 죄송합니다 <br>
+        <b>교수님 죄송합니다 </b><br>
         19/20명 참여중
     </button>
     <br/>
 </div>
+    </div>
 </section>
 <br>
 
